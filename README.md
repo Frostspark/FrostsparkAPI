@@ -1,4 +1,4 @@
-##Frostspark API
+## Frostspark API
 
 This is the repository for Frostspark's Plugin API.
 To use Frostspark you'll need to use one of the bundled releases, or to manually compile the core binary yourself.
