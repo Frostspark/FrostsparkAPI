@@ -59,7 +59,7 @@ namespace Frostspark.API.Interfaces
         public abstract void Hurt(int damage, bool crit = false);
 
         /// <summary>
-        /// Returns this player's connection index.
+        /// Returns this player's native index.
         /// </summary>
         public abstract int Index { get; }
 
