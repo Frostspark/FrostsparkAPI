@@ -9,12 +9,12 @@ namespace Frostspark.API.Interfaces
     public abstract class IPlayer
     {
         /// <summary>
-        /// Kills a player.
+        /// Kills this player.
         /// </summary>
         public abstract void Kill();
 
         /// <summary>
-        /// Removes a player from the server with an optional message.
+        /// Removes this player from the server with an optional message.
         /// </summary>
         /// <param name="reason">Kick reason</param>
         public abstract void Kick(string reason = null);
