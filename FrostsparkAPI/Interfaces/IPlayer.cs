@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Interfaces
 {
-    public abstract class IPlayer
+    /// <summary>
+    /// Represents a single remote player's session
+    /// </summary>
+    public abstract class IPlayer : ICommandSender
     {
         /// <summary>
         /// Kills this player.
@@ -56,12 +59,13 @@ namespace Frostspark.API.Interfaces
         public abstract void Hurt(int damage, bool crit = false);
 
         /// <summary>
-        /// Sends a string message to this player. Optionally, the unformatted/main color can be set.
+        /// Returns this player's connection index.
         /// </summary>
-        /// <param name="message">The string message to send</param>
-        /// <param name="r">Red byte of unformatted text color value</param>
-        /// <param name="g">Green byte of unformatted text color value</param>
-        /// <param name="b">Blue byte of unformatted text color value</param>
-        public abstract void SendMessage(string message, byte r = 255, byte g = 255, byte b = 255);
+        public abstract int Index { get; }
+
+        /// <summary>
+        /// Returns whether or not this player object has valid connected player backing.
+        /// </summary>
+        public abstract bool IsValid { get; }
     }
 }

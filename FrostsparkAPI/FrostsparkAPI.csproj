@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Frostspark.cs" />
     <Compile Include="Interfaces\IAPIProvider.cs" />
+    <Compile Include="Interfaces\ICommandSender.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IPlayerList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
