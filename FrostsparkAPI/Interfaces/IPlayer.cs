@@ -56,6 +56,7 @@ namespace Frostspark.API.Interfaces
         /// Hurts this player with a specified amount of damage
         /// </summary>
         /// <param name="damage">Hitpoints of damage to deal</param>
+        /// <param name="crit">Whether or not the damage should be critical</param>
         public abstract void Hurt(int damage, bool crit = false);
 
         /// <summary>
