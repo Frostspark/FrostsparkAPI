@@ -25,7 +25,7 @@ namespace Frostspark.API.Interfaces
         /// <param name="x">X position to teleport to</param>
         /// <param name="y">Y position to teleport to</param>
         /// <param name="effect">Optional effect. Defines particles and/or sound</param>
-        public abstract void Teleport(float x, float y, byte effect = 1);
+        public abstract void TeleportToPos(float x, float y, byte effect = 1);
 
         /// <summary>
         /// Teleports this player to the given tile coordinates with an optional teleportation effect.
@@ -33,14 +33,14 @@ namespace Frostspark.API.Interfaces
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="effect"></param>
-        public abstract void Teleport(int x, int y, byte effect = 1);
+        public abstract void TeleportToTile(int x, int y, byte effect = 1);
 
         /// <summary>
         /// Teleports this player to the given player's position with an optional teleportation effect.
         /// </summary>
         /// <param name="target"></param>
         /// <param name="effect"></param>
-        public abstract void Teleport(IPlayer target, byte effect = 1);
+        public abstract void TeleportToPlayer(IPlayer target, byte effect = 1);
 
         /// <summary>
         /// Heals this player. Optional parameters define healing mode.
