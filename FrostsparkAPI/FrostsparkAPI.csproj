@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\IEvent.cs" />
     <Compile Include="Frostspark.cs" />
     <Compile Include="Interfaces\IAPIProvider.cs" />
     <Compile Include="Interfaces\ICommandSender.cs" />
