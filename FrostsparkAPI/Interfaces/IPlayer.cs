@@ -50,7 +50,13 @@ namespace Frostspark.API.Interfaces
         public abstract void Heal(int health = 0, bool is_add = false);
 
         /// <summary>
-        /// Sends a raw string message to this player. Optionally, the main color can be set.
+        /// Hurts this player with a specified amount of damage
+        /// </summary>
+        /// <param name="damage">Hitpoints of damage to deal</param>
+        public abstract void Hurt(int damage, bool crit = false);
+
+        /// <summary>
+        /// Sends a string message to this player. Optionally, the unformatted/main color can be set.
         /// </summary>
         /// <param name="message">The string message to send</param>
         /// <param name="r">Red byte of unformatted text color value</param>
