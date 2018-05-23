@@ -47,7 +47,7 @@ namespace Frostspark.API.Interfaces
         /// </summary>
         /// <param name="health">Amount of health to add (or to heal up to)</param>
         /// <param name="is_add">Specifies healing mode. A value of true means <paramref name="health"/> health will be added. A value of false means the player's health will be set to <paramref name="health"/></param>
-        public abstract void Heal(int health = -1, bool is_add = false);
+        public abstract void Heal(int health = 0, bool is_add = false);
 
         /// <summary>
         /// Sends a raw string message to this player. Optionally, the main color can be set.
