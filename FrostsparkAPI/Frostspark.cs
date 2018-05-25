@@ -5,24 +5,24 @@ namespace Frostspark.API
 {
     public static class Frostspark
     {
-        private static IAPIProvider APIProviderInst;
-        internal static IAPIProvider APIProvider
+        private static BaseServer ServerInst;
+        internal static BaseServer Server
         {
             get
             {
                 AssertAPIState(true);
-                return APIProviderInst;
+                return ServerInst;
             }
             set
             {
                 AssertAPIState(false);
                 Initialize();
-                APIProviderInst = value;
+                ServerInst = value;
             }
         }
 
-        private static IPlayerList PlayersInst;
-        public static IPlayerList Players
+        private static BasePlayerList PlayersInst;
+        public static BasePlayerList Players
         {
             get
             {
@@ -41,14 +41,14 @@ namespace Frostspark.API
         private static void AssertAPIState(bool init)
         {
             if (init)
-                Utils.AssertState(() => APIProviderInst != null, "The API has not been initialized yet!");
+                Utils.AssertState(() => ServerInst != null, "The server API has not been initialized yet!");
             else
-                Utils.AssertState(() => APIProviderInst == null, "The API has already been initialized!");
+                Utils.AssertState(() => ServerInst == null, "The server API has already been initialized!");
         }
 
         private static void Initialize()
         {
-            PlayersInst = APIProvider.PlayerList;
+            PlayersInst = Server.PlayerList;
         }
     }
 }

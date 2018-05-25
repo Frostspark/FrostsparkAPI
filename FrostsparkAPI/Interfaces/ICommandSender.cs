@@ -6,15 +6,34 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Interfaces
 {
-    public abstract class ICommandSender
+    public interface ICommandSender
     {
         /// <summary>
-        /// Sends a string message to this player. Optionally, the unformatted/main color can be set.
+        /// Returns the sender's log-friendly name
         /// </summary>
-        /// <param name="message">The string message to send</param>
-        /// <param name="r">Red byte of unformatted text color value</param>
-        /// <param name="g">Green byte of unformatted text color value</param>
-        /// <param name="b">Blue byte of unformatted text color value</param>
-        public abstract void SendMessage(string message, byte r = 255, byte g = 255, byte b = 255);
+        string Name { get; }
+
+        /// <summary>
+        /// Returns the sender's detailed log-name (type of sender, name (if applicable) and coordinates (if it's a tile))
+        /// </summary>
+        string DetailedName { get; }
+
+        /// <summary>
+        /// Sends a success message to this command sender.
+        /// </summary>
+        /// <param name="s">The message string</param>
+        void SendSuccessMessage(string s);
+
+        /// <summary>
+        /// Sends an error message to this command sender.
+        /// </summary>
+        /// <param name="s">The message string</param>
+        void SendErrorMessage(string s);
+
+        /// <summary>
+        /// Sends an info message to this command sender.
+        /// </summary>
+        /// <param name="s">The message string</param>
+        void SendInfoMessage(string s);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events
 {
-    public abstract class IEvent
+    public abstract class BaseEvent
     {
         /// <summary>
         /// Returns whether or not this event can be cancelled.

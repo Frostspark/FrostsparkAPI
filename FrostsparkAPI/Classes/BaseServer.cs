@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Interfaces
 {
-    public abstract class IAPIProvider
+    public abstract class BaseServer
     {
-        public abstract IPlayerList PlayerList { get; }
+        public abstract BasePlayerList PlayerList { get; }
     }
 }

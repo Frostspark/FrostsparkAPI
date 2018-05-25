@@ -41,14 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Classes\Event.cs" />
     <Compile Include="Frostspark.cs" />
-    <Compile Include="Interfaces\IAPIProvider.cs" />
+    <Compile Include="Classes\Server.cs" />
     <Compile Include="Interfaces\ICommandSender.cs" />
-    <Compile Include="Interfaces\IPlayer.cs" />
-    <Compile Include="Interfaces\IPlayerList.cs" />
+    <Compile Include="Classes\BasePlayer.cs" />
+    <Compile Include="Classes\BasePlayerList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
