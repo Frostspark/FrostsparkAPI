@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Event.cs" />
+    <Compile Include="Classes\BaseEvent.cs" />
     <Compile Include="Frostspark.cs" />
-    <Compile Include="Classes\Server.cs" />
+    <Compile Include="Classes\BaseServer.cs" />
     <Compile Include="Interfaces\ICommandSender.cs" />
     <Compile Include="Classes\BasePlayer.cs" />
     <Compile Include="Classes\BasePlayerList.cs" />
