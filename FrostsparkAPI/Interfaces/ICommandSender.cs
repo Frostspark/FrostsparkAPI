@@ -14,7 +14,7 @@ namespace Frostspark.API.Interfaces
         string Name { get; }
 
         /// <summary>
-        /// Returns the sender's detailed log-name (type of sender, name (if applicable) and coordinates (if it's a tile))
+        /// Returns the sender's detailed log-name (type of sender, name (if applicable) and coordinates (if it's a block executing commands))
         /// </summary>
         string DetailedName { get; }
 

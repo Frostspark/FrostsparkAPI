@@ -1,49 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Frostspark.API.Interfaces;
 
-namespace Frostspark.API.Interfaces
+namespace Frostspark.API.Classes
 {
     /// <summary>
     /// Represents a single remote player's session
     /// </summary>
-    public abstract class BasePlayer : ICommandSender
+    public abstract class BasePlayer : BaseEntity, ICommandSender, ITeleportable
     {
-        /// <summary>
-        /// Kills this player.
-        /// </summary>
-        public abstract void Kill();
-
         /// <summary>
         /// Removes this player from the server with an optional message.
         /// </summary>
         /// <param name="reason">Kick reason</param>
         public abstract void Kick(string reason = null);
-
-        /// <summary>
-        /// Teleports this player to the given coordinates with an optional teleportation effect.
-        /// </summary>
-        /// <param name="x">X position to teleport to</param>
-        /// <param name="y">Y position to teleport to</param>
-        /// <param name="effect">Optional effect. Defines particles and/or sound</param>
-        public abstract void TeleportToPos(float x, float y, byte effect = 1);
-
-        /// <summary>
-        /// Teleports this player to the given tile coordinates with an optional teleportation effect.
-        /// </summary>
-        /// <param name="x">Tile X coordinate to teleport to</param>
-        /// <param name="y">Tile Y coordinate to teleport to</param>
-        /// <param name="effect">Optional effect. Defines particles and/or sound</param>
-        public abstract void TeleportToTile(int x, int y, byte effect = 1);
-
-        /// <summary>
-        /// Teleports this player to the given player's position with an optional teleportation effect.
-        /// </summary>
-        /// <param name="target">The player to teleport to</param>
-        /// <param name="effect">Optional effect. Defines particles and/or sound</param>
-        public abstract void TeleportToPlayer(BasePlayer target, byte effect = 1);
 
         /// <summary>
         /// Heals this player. Optional parameters define healing mode.
@@ -95,6 +63,29 @@ namespace Frostspark.API.Interfaces
         /// </summary>
         /// <param name="s"></param>
         public abstract void SendInfoMessage(string s);
+
+        /// <summary>
+        /// Implements <see cref="ITeleportable.TeleportToPos(float, float, byte)"/>
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="effect"></param>
+        public abstract void TeleportToPos(float x, float y, byte effect = 1);
+
+        /// <summary>
+        /// Implements <see cref="ITeleportable.TeleportToTile(int, int, byte)"/>
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="effect"></param>
+        public abstract void TeleportToTile(int x, int y, byte effect = 1);
+
+        /// <summary>
+        /// Implements <see cref="ITeleportable.TeleportToEntity(BaseEntity, byte)"/>
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="effect"></param>
+        public abstract void TeleportToEntity(BaseEntity target, byte effect = 1);
 
         /// <summary>
         /// Returns this player's character name.
