@@ -1,4 +1,5 @@
-﻿using Frostspark.API.Classes;
+﻿using Frostspark.API.Classes.Events;
+using Frostspark.API.Entities;
 
 namespace Frostspark.API.Events
 {

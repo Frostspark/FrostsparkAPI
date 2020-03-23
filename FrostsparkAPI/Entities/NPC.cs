@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Frostspark.API.Interfaces;
 
-namespace Frostspark.API.Classes
+namespace Frostspark.API.Entities
 {
     /// <summary>
     /// Represents a wrapper Terraria NPC object.

@@ -1,6 +1,5 @@
 ﻿using Frostspark.API.Classes;
 using Frostspark.API.Events;
-using Frostspark.API.Interfaces;
 using System;
 
 namespace Frostspark.API
@@ -11,37 +10,20 @@ namespace Frostspark.API
     public static class Frostspark
     {
         private static Server ServerInst;
-        internal static Server Server
+        public static Server Server
         {
             get
             {
                 AssertAPIState(true);
                 return ServerInst;
             }
-            set
+            internal set
             {
                 AssertAPIState(false);
                 Initialize();
                 ServerInst = value;
             }
         }
-
-        private static PlayerList PlayersInst;
-        public static PlayerList Players
-        {
-            get
-            {
-                AssertAPIState(true);
-                return PlayersInst;
-            }
-            set
-            {
-                AssertAPIState(false);
-                PlayersInst = value;
-            }
-        }
-
-
 
         private static void AssertAPIState(bool init)
         {
@@ -53,7 +35,7 @@ namespace Frostspark.API
 
         private static void Initialize()
         {
-            PlayersInst = Server.PlayerList;
+
         }
     }
 }

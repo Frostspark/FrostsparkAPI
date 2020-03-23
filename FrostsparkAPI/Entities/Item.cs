@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Classes
+namespace Frostspark.API.Entities
 {
     /// <summary>
-    /// Represents a wrapped Terraria projectile object.
+    /// Represents a wrapped Terraria item object.
     /// </summary>
-    public abstract class Projectile : Entity
+    public abstract class Item : Entity
     {
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Frostspark.API.Interfaces;
 using Frostspark.API.Packets;
 
-namespace Frostspark.API.Classes
+namespace Frostspark.API.Entities
 {
     /// <summary>
     /// Represents a wrapped Terraria player object.
@@ -60,11 +60,5 @@ namespace Frostspark.API.Classes
         public abstract void TeleportToTile(int x, int y, byte effect = 1);
 
         public abstract void TeleportToEntity(Entity target, byte effect = 1);
-
-        /// <summary>
-        /// Sends a network packet to this player.
-        /// </summary>
-        /// <param name="packet">The packet to send</param>
-        public abstract void SendPacket(BasePacket packet);
     }
 }

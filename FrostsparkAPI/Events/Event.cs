@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Events
+namespace Frostspark.API.Classes.Events
 {
     public abstract class Event
     {
@@ -13,19 +13,19 @@ namespace Frostspark.API.Events
         /// </summary>
         public virtual bool Cancellable => false;
 
-        private bool CancelledF;
+        private bool IsCancelled;
 
         /// <summary>
         /// Returns whether or not the event is cancelled, or sets its cancellation state.
-        /// <para>Throws an exception if the event is not cancellable. Check <see cref="Event.Cancellable"/> if you want to avoid exceptions.</para>
+        /// <para>Throws an exception if the event is not cancellable. Check <see cref="Cancellable"/> if you want to avoid exceptions.</para>
         /// </summary>
         public virtual bool Cancelled
         {
-            get => Cancellable ? CancelledF : throw new InvalidOperationException("This event is not cancellable!");
+            get => Cancellable ? IsCancelled : throw new InvalidOperationException("This event is not cancellable!");
             set
             {
                 if (Cancellable)
-                    CancelledF = value;
+                    IsCancelled = value;
                 else
                     throw new InvalidOperationException("This event is not cancellable!");
             }

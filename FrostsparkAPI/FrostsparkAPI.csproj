@@ -41,18 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BaseEntity.cs" />
-    <Compile Include="Classes\BaseEvent.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Classes\EntityList.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Entities\NPC.cs" />
+    <Compile Include="Entities\Projectile.cs" />
     <Compile Include="Packets\BasePacket.cs" />
     <Compile Include="Events\PlayerAssignSlotEvent.cs" />
     <Compile Include="Events\PlayerConnectEvent.cs" />
     <Compile Include="Events\PlayerUpdateCharacterEvent.cs" />
     <Compile Include="Events\PlayerUpdateMovementEvent.cs" />
     <Compile Include="Frostspark.cs" />
-    <Compile Include="Classes\BaseServer.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="Interfaces\ICommandSender.cs" />
-    <Compile Include="Classes\BasePlayer.cs" />
-    <Compile Include="Classes\BasePlayerList.cs" />
+    <Compile Include="Entities\Player.cs" />
     <Compile Include="Interfaces\ITeleportable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
