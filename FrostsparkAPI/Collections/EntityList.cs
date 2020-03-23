@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Frostspark.API.Entities;
 
-namespace Frostspark.API.Classes
+namespace Frostspark.API.Collections
 {
     /// <summary>
     /// Represents an entity list - an abstract wrapper around Terraria's entity arrays.
