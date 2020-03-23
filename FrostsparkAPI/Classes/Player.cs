@@ -38,9 +38,6 @@ namespace Frostspark.API.Classes
         /// </summary>
         public abstract bool IsValid { get; }
 
-        /// <summary>
-        /// Implements <see cref="ICommandSender.LogName"/>
-        /// </summary>
         public abstract string LogName { get; }
 
         /// <summary>
@@ -52,45 +49,16 @@ namespace Frostspark.API.Classes
         /// <param name="b">Blue byte of unformatted text color value</param>
         public abstract void SendMessage(string message, byte r = 255, byte g = 255, byte b = 255);
 
-        /// <summary>
-        /// Implements <see cref="ICommandSender.SendSuccessMessage(string)"/>
-        /// </summary>
-        /// <param name="s"></param>
         public abstract void SendSuccessMessage(string s);
 
-        /// <summary>
-        /// Implements <see cref="ICommandSender.SendErrorMessage(string)"/>
-        /// </summary>
-        /// <param name="s"></param>
         public abstract void SendErrorMessage(string s);
 
-        /// <summary>
-        /// Implements <see cref="ICommandSender.SendInfoMessage(string)"/>
-        /// </summary>
-        /// <param name="s"></param>
         public abstract void SendInfoMessage(string s);
 
-        /// <summary>
-        /// Implements <see cref="ITeleportable.TeleportToPos(float, float, byte)"/>
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="effect"></param>
         public abstract void TeleportToPos(float x, float y, byte effect = 1);
 
-        /// <summary>
-        /// Implements <see cref="ITeleportable.TeleportToTile(int, int, byte)"/>
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="effect"></param>
         public abstract void TeleportToTile(int x, int y, byte effect = 1);
 
-        /// <summary>
-        /// Implements <see cref="ITeleportable.TeleportToEntity(Entity, byte)"/>
-        /// </summary>
-        /// <param name="target"></param>
-        /// <param name="effect"></param>
         public abstract void TeleportToEntity(Entity target, byte effect = 1);
 
         /// <summary>
