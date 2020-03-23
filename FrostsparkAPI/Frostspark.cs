@@ -9,6 +9,8 @@ namespace Frostspark.API
     /// </summary>
     public static class Frostspark
     {
+        private static bool Initialized;
+
         private static Server ServerInst;
         public static Server Server
         {
@@ -20,7 +22,6 @@ namespace Frostspark.API
             internal set
             {
                 AssertAPIState(false);
-                Initialize();
                 ServerInst = value;
             }
         }
@@ -33,9 +34,14 @@ namespace Frostspark.API
                 Utils.AssertState(() => ServerInst == null, "The server API has already been initialized!");
         }
 
-        private static void Initialize()
+        public static void Initialize(Server server)
         {
+            if(Initialized)
+            {
+                throw new InvalidOperationException("The API is already initialised.");
+            }
 
+            Server = server;
         }
     }
 }
