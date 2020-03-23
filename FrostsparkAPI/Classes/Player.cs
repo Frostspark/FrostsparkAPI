@@ -1,11 +1,12 @@
 ﻿using Frostspark.API.Interfaces;
+using Frostspark.API.Packets;
 
 namespace Frostspark.API.Classes
 {
     /// <summary>
-    /// Represents a single remote player's session
+    /// Represents a wrapped Terraria player object.
     /// </summary>
-    public abstract class BasePlayer : BaseEntity, ICommandSender, ITeleportable
+    public abstract class Player : Entity, ICommandSender, ITeleportable
     {
         /// <summary>
         /// Removes this player from the server with an optional message.
@@ -36,6 +37,11 @@ namespace Frostspark.API.Classes
         /// Returns whether or not this player object has valid connected player backing.
         /// </summary>
         public abstract bool IsValid { get; }
+
+        /// <summary>
+        /// Implements <see cref="ICommandSender.LogName"/>
+        /// </summary>
+        public abstract string LogName { get; }
 
         /// <summary>
         /// Sends a string message to this player. Optionally, the unformatted/main color can be set.
@@ -81,20 +87,16 @@ namespace Frostspark.API.Classes
         public abstract void TeleportToTile(int x, int y, byte effect = 1);
 
         /// <summary>
-        /// Implements <see cref="ITeleportable.TeleportToEntity(BaseEntity, byte)"/>
+        /// Implements <see cref="ITeleportable.TeleportToEntity(Entity, byte)"/>
         /// </summary>
         /// <param name="target"></param>
         /// <param name="effect"></param>
-        public abstract void TeleportToEntity(BaseEntity target, byte effect = 1);
+        public abstract void TeleportToEntity(Entity target, byte effect = 1);
 
         /// <summary>
-        /// Returns this player's character name.
+        /// Sends a network packet to this player.
         /// </summary>
-        public abstract string Name { get; }
-
-        /// <summary>
-        /// Returns this player's detailed log-name.
-        /// </summary>
-        public abstract string DetailedName { get; }
+        /// <param name="packet">The packet to send</param>
+        public abstract void SendPacket(BasePacket packet);
     }
 }

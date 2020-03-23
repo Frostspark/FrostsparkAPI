@@ -14,9 +14,9 @@ namespace Frostspark.API.Interfaces
         string Name { get; }
 
         /// <summary>
-        /// Returns the sender's detailed log-name (type of sender, name (if applicable) and coordinates (if it's a block executing commands))
+        /// Returns the sender's detailed descriptor used for logging (type of sender, name (if applicable) and coordinates (if it's a block executing commands))
         /// </summary>
-        string DetailedName { get; }
+        string LogName { get; }
 
         /// <summary>
         /// Sends a success message to this command sender.

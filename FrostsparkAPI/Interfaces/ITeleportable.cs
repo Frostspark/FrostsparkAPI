@@ -33,6 +33,6 @@ namespace Frostspark.API.Interfaces
         /// </summary>
         /// <param name="target">The entity to teleport to</param>
         /// <param name="effect">Optional effect. Defines particles and/or sound</param>
-        void TeleportToEntity(BaseEntity target, byte effect = 1);
+        void TeleportToEntity(Entity target, byte effect = 1);
     }
 }

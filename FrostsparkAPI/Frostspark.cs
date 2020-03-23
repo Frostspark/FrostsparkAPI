@@ -1,12 +1,17 @@
-﻿using Frostspark.API.Interfaces;
+﻿using Frostspark.API.Classes;
+using Frostspark.API.Events;
+using Frostspark.API.Interfaces;
 using System;
 
 namespace Frostspark.API
 {
+    /// <summary>
+    /// The main API class. Contains static fields allowing easy access to important API facilities.
+    /// </summary>
     public static class Frostspark
     {
-        private static BaseServer ServerInst;
-        internal static BaseServer Server
+        private static Server ServerInst;
+        internal static Server Server
         {
             get
             {
@@ -21,8 +26,8 @@ namespace Frostspark.API
             }
         }
 
-        private static BasePlayerList PlayersInst;
-        public static BasePlayerList Players
+        private static PlayerList PlayersInst;
+        public static PlayerList Players
         {
             get
             {
