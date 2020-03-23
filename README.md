@@ -1,10 +1,13 @@
-## Frostspark API
+## Frostspark :: API
 
 This is the repository for Frostspark's Plugin API.
-To use Frostspark you'll need to use one of the bundled releases, or to manually compile the core binary yourself.
 
-This is only the plugin API. Use it, if you're making a plugin that doesn't require Terraria code. If you **need** native Terraria code, consider referencing your own compiled binary (or one of the release binaries)
+To use Frostspark you'll need to use one of the bundled releases, or manually compile the server binary yourself.
 
-If you need tShock compatibility for legacy plugins, check out the [Frostspark tShock compatible API](https://github.com/Frostspark/FrostsparkTSAPI "Frostspark tShock compatible API"), which also contains instructions on porting your plugins to Frostspark.
+**This is just a plugin API** - aka a framework for creating plugins for Frostspark's ecosystem. The API is portable and version agnostic - a plugin for a specific version of Frostspark's API should run regardless of game version running underneath. This means you **do not** get access to game code as a result.  
 
-This project is currently under construction, and isn't suitable for production use as of yet. We're still prototyping everything. Stay tuned!
+If you need access to game code, you'll also need to reference the FrostsparkServer binary. This means your plugin will no longer be portable between server binaries and will only work on a specific implementation of it.
+
+This project is under construction, and isn't in a usable state.
+
+If you'd like to contribute to the development of this project, you should talk to us on our Discord server at https://terraria.gg/discord. Head for the "Frostspark Zone ❄️" section to find out more. 
