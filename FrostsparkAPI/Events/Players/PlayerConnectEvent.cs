@@ -1,7 +1,7 @@
 ﻿using Frostspark.API.Classes.Events;
 using Frostspark.API.Entities;
 
-namespace Frostspark.API.Events
+namespace Frostspark.API.Events.Players
 {
     /// <summary>
     /// Fired when a player starts connecting to the server.
@@ -12,7 +12,7 @@ namespace Frostspark.API.Events
         /// The player that is connecting.
         /// </summary>
         public Player Player { get; internal set; }
-        
+
         /// <summary>
         /// The client version the player is running.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Frostspark.API.Events
         public Result Result { get; set; }
 
         /// <summary>
-        /// The message displayed to the player if <see cref="PlayerConnectEvent.Result"/> != <see cref="Result.Allow"/>.
+        /// The message displayed to the player if <see cref="Result"/> == <see cref="Result.KickCustom"/>.
         /// </summary>
         public string KickMessage { get; set; }
     }

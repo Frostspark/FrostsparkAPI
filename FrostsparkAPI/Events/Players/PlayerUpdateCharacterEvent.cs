@@ -1,7 +1,7 @@
 ﻿using Frostspark.API.Classes.Events;
 using Frostspark.API.Entities;
 
-namespace Frostspark.API.Events
+namespace Frostspark.API.Events.Players
 {
     /// <summary>
     /// Fired every time a player updates their character's data.
