@@ -10,9 +10,9 @@ namespace Frostspark.API.Entities
     public abstract class Entity
     {
         /// <summary>
-        /// Kills this entity.
+        /// Removes this entity.
         /// </summary>
-        public abstract void Kill();
+        public abstract void Remove();
 
         /// <summary>
         /// This entity's name.

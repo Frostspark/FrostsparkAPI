@@ -1,4 +1,4 @@
-﻿using Frostspark.API.Interfaces;
+﻿using Frostspark.API.Entities.Interfaces;
 using Frostspark.API.Packets;
 
 namespace Frostspark.API.Entities
@@ -6,27 +6,13 @@ namespace Frostspark.API.Entities
     /// <summary>
     /// Represents a wrapped Terraria player object.
     /// </summary>
-    public abstract class Player : Entity, ICommandSender, ITeleportable
+    public abstract class Player : Entity, ICommandSender, ITeleportable, ILiving
     {
         /// <summary>
         /// Removes this player from the server with an optional message.
         /// </summary>
         /// <param name="reason">Kick reason</param>
         public abstract void Kick(string reason = null);
-
-        /// <summary>
-        /// Heals this player. Optional parameters define healing mode.
-        /// </summary>
-        /// <param name="health">Amount of health to add (or to heal up to)</param>
-        /// <param name="is_add">Specifies healing mode. A value of true means <paramref name="health"/> health will be added. A value of false means the player's health will be set to <paramref name="health"/></param>
-        public abstract void Heal(int health = 0, bool is_add = false);
-
-        /// <summary>
-        /// Hurts this player with a specified amount of damage
-        /// </summary>
-        /// <param name="damage">Hitpoints of damage to deal</param>
-        /// <param name="crit">Whether or not the damage should be critical</param>
-        public abstract void Hurt(int damage, bool crit = false);
 
         /// <summary>
         /// Returns this player's native index.
@@ -40,8 +26,10 @@ namespace Frostspark.API.Entities
 
         public abstract string LogName { get; }
 
+        public abstract int Health { get; set; }
+
         /// <summary>
-        /// Sends a string message to this player. Optionally, the unformatted/main color can be set.
+        /// Sends a string message to this player with the specified default colour.
         /// </summary>
         /// <param name="message">The string message to send</param>
         /// <param name="r">Red byte of unformatted text color value</param>
@@ -60,5 +48,11 @@ namespace Frostspark.API.Entities
         public abstract void TeleportToTile(int x, int y, byte effect = 1);
 
         public abstract void TeleportToEntity(Entity target, byte effect = 1);
+
+        public abstract void Hurt(int damage, bool crit = false);
+
+        public abstract void Kill();
+
+        public abstract void Heal(int health = 0, bool is_add = false);
     }
 }

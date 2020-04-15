@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Interfaces
+namespace Frostspark.API.Entities.Interfaces
 {
     /// <summary>
     /// Represents an entity that can be teleported.
