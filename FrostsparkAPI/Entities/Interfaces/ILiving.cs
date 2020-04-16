@@ -33,7 +33,7 @@ namespace Frostspark.API.Entities.Interfaces
         /// Heals this entity. Optional parameters define healing mode.
         /// <para></para>
         /// </summary>
-        /// <param name="health">Amount of health to add (or to heal up to)</param>
+        /// <param name="health">Amount of health to add (or to heal up to). 0 implies full health.</param>
         /// <param name="is_add">Specifies healing mode. A value of true means <paramref name="health"/> health will be added. A value of false means the player's health will be set to <paramref name="health"/></param>
         void Heal(int health = 0, bool is_add = false);
     }

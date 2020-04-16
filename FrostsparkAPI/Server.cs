@@ -1,5 +1,7 @@
 ﻿using Frostspark.API.Collections;
 using Frostspark.API.Entities;
+using Frostspark.API.Logging;
+using Frostspark.API.Plugins;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +23,10 @@ namespace Frostspark.API
 
         public abstract EntityList<Item> Items { get; }
 
+        public abstract PluginManager Plugins { get; }
+
+        public abstract Logger Log { get; }
+
+        public abstract void Initialize();
     }
 }

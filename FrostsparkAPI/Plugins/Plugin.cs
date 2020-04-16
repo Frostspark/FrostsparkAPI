@@ -11,12 +11,22 @@ namespace Frostspark.API.Plugins
         /// <summary>
         /// This plugin's name
         /// </summary>
-        public string Name { get; }
+        public abstract string Name { get; }
+
+        /// <summary>
+        /// This plugin's author
+        /// </summary>
+        public abstract string Author { get; }
 
         /// <summary>
         /// The plugin's load order.
         /// </summary>
         public virtual int LoadOrder => 0;
+
+        /// <summary>
+        /// Whether or not this plugin is enabled.
+        /// </summary>
+        public bool Enabled { get; internal set; }
 
         /// <summary>
         /// Called when this plugin is enabled.
@@ -29,12 +39,13 @@ namespace Frostspark.API.Plugins
         public abstract void Disable();
 
         /// <summary>
-        /// Called when this plugin is loaded.
+        /// Called when this plugin has been loaded.
         /// </summary>
         public abstract void Load();
 
         /// <summary>
-        /// Called when this plugin is unloaded.
+        /// Called when this plugin is about to be unloaded.
+        /// <para>You should take extreme care to end all activities not managed by Frostspark as to not block the unloading process as soon as this is called.</para>
         /// </summary>
         public abstract void Unload();
     }

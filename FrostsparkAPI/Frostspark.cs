@@ -42,6 +42,9 @@ namespace Frostspark.API
             }
 
             Server = server;
+            Server.Initialize();
+
+            Initialized = true;
         }
     }
 }
