@@ -15,16 +15,28 @@ namespace Frostspark.API.Plugins
 
         public abstract void UnloadPlugin(string name);
 
-        protected static void EnablePlugin(Plugin plugin)
+        protected static void SetEnabled(Plugin plugin)
         {
             plugin.Enable();
             plugin.Enabled = true;
         }
 
-        protected static void DisablePlugin(Plugin plugin)
+        protected static void SetDisabled(Plugin plugin)
         {
             plugin.Disable();
             plugin.Enabled = false;
+        }
+
+        protected static void SetLoaded(Plugin plugin)
+        {
+            plugin.Load();
+            plugin.Loaded = true;
+        }
+
+        protected static void SetUnloaded(Plugin plugin)
+        {
+            plugin.Unload();
+            plugin.Loaded = false;
         }
     }
 }

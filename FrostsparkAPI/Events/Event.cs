@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Classes.Events
+namespace Frostspark.API.Events
 {
     public abstract class Event
     {

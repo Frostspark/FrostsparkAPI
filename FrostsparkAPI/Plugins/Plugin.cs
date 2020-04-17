@@ -29,6 +29,11 @@ namespace Frostspark.API.Plugins
         public bool Enabled { get; internal set; }
 
         /// <summary>
+        /// Whether or not this plugin is loaded.
+        /// </summary>
+        public bool Loaded { get; internal set; }
+
+        /// <summary>
         /// Called when this plugin is enabled.
         /// </summary>
         public abstract void Enable();

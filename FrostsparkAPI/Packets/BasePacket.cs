@@ -1,5 +1,4 @@
-﻿using Frostspark.API.Classes;
-using System;
+﻿using System;
 
 namespace Frostspark.API.Packets
 {

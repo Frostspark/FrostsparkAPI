@@ -49,8 +49,11 @@
     <Compile Include="Events\Event.cs" />
     <Compile Include="Entities\NPC.cs" />
     <Compile Include="Entities\Projectile.cs" />
-    <Compile Include="Events\IAsynchronous.cs" />
-    <Compile Include="Events\ICancellable.cs" />
+    <Compile Include="Events\EventHandler.cs" />
+    <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Events\Interfaces\IAsynchronous.cs" />
+    <Compile Include="Events\Interfaces\ICancellable.cs" />
+    <Compile Include="Events\Server\GameStartEvent.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Packets\BasePacket.cs" />
     <Compile Include="Events\Players\PlayerAssignSlotEvent.cs" />
@@ -61,6 +64,7 @@
     <Compile Include="Plugins\Exceptions\IncompatibleAPIVersionException.cs" />
     <Compile Include="Plugins\Exceptions\InvalidPluginException.cs" />
     <Compile Include="Plugins\Exceptions\PluginAlreadyLoadedException.cs" />
+    <Compile Include="Plugins\Exceptions\PluginNotFoundException.cs" />
     <Compile Include="Plugins\Plugin.cs" />
     <Compile Include="Plugins\PluginManager.cs" />
     <Compile Include="Server.cs" />
