@@ -1,12 +1,8 @@
 ﻿using Frostspark.API.Collections;
 using Frostspark.API.Entities;
+using Frostspark.API.Events;
 using Frostspark.API.Logging;
 using Frostspark.API.Plugins;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Frostspark.API
 {
@@ -26,6 +22,8 @@ namespace Frostspark.API
         public abstract PluginManager Plugins { get; }
 
         public abstract Logger Log { get; }
+
+        public abstract EventManager Events { get; }
 
         public abstract void Initialize();
     }

@@ -7,6 +7,10 @@ namespace Frostspark.API.Events.Players
     /// </summary>
     public class PlayerAssignSlotEvent : Event
     {
+        public PlayerAssignSlotEvent(API.Server server) : base(server)
+        {
+        }
+
         /// <summary>
         /// The player
         /// </summary>

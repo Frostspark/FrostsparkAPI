@@ -1,5 +1,4 @@
 ﻿using Frostspark.API.Entities.Interfaces;
-using Frostspark.API.Packets;
 
 namespace Frostspark.API.Entities
 {

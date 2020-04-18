@@ -9,6 +9,10 @@ namespace Frostspark.API.Events.Players
     /// </summary>
     public class PlayerUpdateCharacterEvent : Event
     {
+        public PlayerUpdateCharacterEvent(API.Server server) : base(server)
+        {
+        }
+
         public Player Player { get; }
     }
 }

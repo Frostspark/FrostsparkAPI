@@ -7,6 +7,10 @@ namespace Frostspark.API.Events.Players
     /// </summary>
     public class PlayerConnectEvent : Event
     {
+        public PlayerConnectEvent(API.Server server) : base(server)
+        {
+        }
+
         /// <summary>
         /// The player that is connecting.
         /// </summary>
@@ -18,22 +22,22 @@ namespace Frostspark.API.Events.Players
         public string ClientVersion { get; internal set; }
 
         /// <summary>
-        /// The event result. The player is allowed entry if <see cref="Result"/> == <see cref="Result.Allow"/>
+        /// The event result. The player is allowed entry if <see cref="Result"/> == <see cref="COnnectResult.Allow"/>
         /// </summary>
-        public Result Result { get; set; }
+        public COnnectResult Result { get; set; }
 
         /// <summary>
-        /// The message displayed to the player if <see cref="Result"/> == <see cref="Result.KickCustom"/>.
+        /// The message displayed to the player if <see cref="Result"/> == <see cref="COnnectResult.KickCustom"/>.
         /// </summary>
         public string KickMessage { get; set; }
-    }
 
-    public enum Result
-    {
-        Allow,
-        KickFull,
-        KickBanned,
-        KickWhitelist,
-        KickCustom
+        public enum COnnectResult
+        {
+            Allow,
+            KickFull,
+            KickBanned,
+            KickWhitelist,
+            KickCustom
+        }
     }
 }
