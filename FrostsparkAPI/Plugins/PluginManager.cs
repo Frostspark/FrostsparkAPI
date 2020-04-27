@@ -1,4 +1,6 @@
-﻿namespace Frostspark.API.Plugins
+﻿using Frostspark.API.Logging;
+
+namespace Frostspark.API.Plugins
 {
     public abstract class PluginManager
     {
@@ -30,6 +32,11 @@
         {
             plugin.Unload();
             plugin.Loaded = false;
+        }
+
+        protected static void SetLogger(Plugin plugin, Logger logger)
+        {
+            plugin.Log = logger;
         }
     }
 }

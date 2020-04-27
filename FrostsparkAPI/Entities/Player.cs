@@ -1,4 +1,5 @@
-﻿using Frostspark.API.Entities.Interfaces;
+﻿using System.Net;
+using Frostspark.API.Entities.Interfaces;
 
 namespace Frostspark.API.Entities
 {
@@ -7,6 +8,11 @@ namespace Frostspark.API.Entities
     /// </summary>
     public abstract class Player : Entity, ICommandSender, ITeleportable, ILiving
     {
+        /// <summary>
+        /// The IP <see cref="EndPoint"/> (address + port) this player is connected from.
+        /// </summary>
+        public abstract IPEndPoint IP { get; protected set; }
+
         /// <summary>
         /// Removes this player from the server with an optional message.
         /// </summary>

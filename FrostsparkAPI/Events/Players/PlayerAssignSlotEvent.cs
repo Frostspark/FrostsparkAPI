@@ -12,7 +12,7 @@ namespace Frostspark.API.Events.Players
         }
 
         /// <summary>
-        /// The player
+        /// The player that is being assigned a slot.
         /// </summary>
         public Player Player { get; }
 

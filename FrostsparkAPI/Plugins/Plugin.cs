@@ -1,4 +1,6 @@
-﻿namespace Frostspark.API.Plugins
+﻿using Frostspark.API.Logging;
+
+namespace Frostspark.API.Plugins
 {
     public abstract class Plugin
     {
@@ -26,6 +28,12 @@
         /// Whether or not this plugin is loaded.
         /// </summary>
         public bool Loaded { get; internal set; }
+
+        /// <summary>
+        /// This plugin's logger.
+        /// <para>Depending on server implementation, plugins might receive a different object than the root server logger, such as a localised/tagged logger.</para>
+        /// </summary>
+        public Logger Log { get; internal set; }
 
         /// <summary>
         /// Called when this plugin is enabled.

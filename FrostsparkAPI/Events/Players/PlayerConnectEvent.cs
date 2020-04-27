@@ -22,16 +22,16 @@ namespace Frostspark.API.Events.Players
         public string ClientVersion { get; internal set; }
 
         /// <summary>
-        /// The event result. The player is allowed entry if <see cref="Result"/> == <see cref="COnnectResult.Allow"/>
+        /// The event result. The player is allowed entry if <see cref="Result"/> == <see cref="ConnectResult.Allow"/>
         /// </summary>
-        public COnnectResult Result { get; set; }
+        public ConnectResult Result { get; set; }
 
         /// <summary>
-        /// The message displayed to the player if <see cref="Result"/> == <see cref="COnnectResult.KickCustom"/>.
+        /// The message displayed to the player if <see cref="Result"/> == <see cref="ConnectResult.KickCustom"/>.
         /// </summary>
         public string KickMessage { get; set; }
 
-        public enum COnnectResult
+        public enum ConnectResult
         {
             Allow,
             KickFull,
