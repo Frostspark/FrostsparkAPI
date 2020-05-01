@@ -6,7 +6,7 @@ namespace Frostspark.API.Entities
     /// <summary>
     /// Represents a wrapped Terraria player object.
     /// </summary>
-    public abstract class Player : Entity, ICommandSender, ITeleportable, ILiving
+    public abstract partial class Player : Entity, ICommandSender, ITeleportable, ILiving
     {
         /// <summary>
         /// The IP <see cref="EndPoint"/> (address + port) this player is connected from.
@@ -59,5 +59,10 @@ namespace Frostspark.API.Entities
         public abstract void Kill();
 
         public abstract void Heal(int health = 0, bool is_add = false);
+
+        /// <summary>
+        /// Respawns this player.
+        /// </summary>
+        public abstract void Respawn();
     }
 }

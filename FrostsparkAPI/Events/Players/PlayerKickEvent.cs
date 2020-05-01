@@ -8,7 +8,7 @@ using Frostspark.API.Entities;
 namespace Frostspark.API.Events.Players
 {
     /// <summary>
-    /// Occurs when a <see cref="API.Entities.Player"/> is disconnected by the server.
+    /// Fired when a player is forcibly disconnected by the server.
     /// </summary>
     public class PlayerKickEvent : Event
     {
@@ -19,7 +19,7 @@ namespace Frostspark.API.Events.Players
         /// <summary>
         /// The player that is being disconnected.
         /// </summary>
-        public Player Player { get; internal set; }
+        public Player Player { get; }
 
         /// <summary>
         /// The reason that will be displayed to the player.

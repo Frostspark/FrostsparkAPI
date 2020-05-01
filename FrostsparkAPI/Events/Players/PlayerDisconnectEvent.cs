@@ -20,6 +20,6 @@ namespace Frostspark.API.Events.Players
         /// <summary>
         /// The player that has disconnected.
         /// </summary>
-        public Player Player { get; internal set; }
+        public Player Player { get; }
     }
 }
