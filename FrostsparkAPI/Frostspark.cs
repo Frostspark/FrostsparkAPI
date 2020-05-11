@@ -1,48 +1,13 @@
-﻿using System;
+/*
+sup, this is TerrariaMaster
+RENAME THIS PROJECT TO NIGGA.IO OR ELSE I WILL HACK YOU 
+I AM GOVERNMENT HACKER
 
-namespace Frostspark.API
-{
-    /// <summary>
-    /// The main API class. Contains static fields allowing easy access to important API facilities.
-    /// </summary>
-    public static class Frostspark
-    {
-        private static bool Initialized;
+so anyways I wanted to give you a lil warning
+raid of 4 people is coming very soon with people already on the server :>
 
-        private static Server ServerInst;
-        public static Server Server
-        {
-            get
-            {
-                AssertAPIState(true);
-                return ServerInst;
-            }
-            internal set
-            {
-                AssertAPIState(false);
-                ServerInst = value;
-            }
-        }
+you have until then to figure out your antiraid
+before its too late
 
-        private static void AssertAPIState(bool init)
-        {
-            if (init)
-                Utils.AssertState(() => ServerInst != null, "The server API has not been initialized yet!");
-            else
-                Utils.AssertState(() => ServerInst == null, "The server API has already been initialized!");
-        }
-
-        public static void Initialize(Server server)
-        {
-            if(Initialized)
-            {
-                throw new InvalidOperationException("The API is already initialised.");
-            }
-
-            Server = server;
-            Server.Initialize();
-
-            Initialized = true;
-        }
-    }
-}
+btw you suck quake
+*/
