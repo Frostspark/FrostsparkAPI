@@ -23,6 +23,8 @@ namespace Frostspark.API.Entities
 
         public abstract int Health { get; set; }
 
+        public abstract int MaxHealth { get; set; }
+
         /// <summary>
         /// Sends a string message to this player with the specified default colour.
         /// </summary>

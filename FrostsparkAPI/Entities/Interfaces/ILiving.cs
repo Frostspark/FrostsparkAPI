@@ -11,6 +11,11 @@
         int Health { get; set; }
 
         /// <summary>
+        /// Gets or sets this entity's maximum health.
+        /// </summary>
+        int MaxHealth { get; set; }
+
+        /// <summary>
         /// Hurts the entity.
         /// </summary>
         /// <param name="damage">Hitpoints of damage to deal</param>
@@ -18,7 +23,7 @@
         void Hurt(int damage, bool crit = false);
 
         /// <summary>
-        /// Instantly kills the entity
+        /// Instantly kills the entity.
         /// <para>This is different from <see cref="Entity.Remove"/> - <see cref="Kill"/> will trigger death hooks, while <see cref="Entity.Remove"/> will remove it silently.</para>
         /// </summary>
         void Kill();
