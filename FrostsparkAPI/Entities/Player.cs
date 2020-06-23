@@ -4,7 +4,7 @@ using Frostspark.API.Entities.Interfaces;
 namespace Frostspark.API.Entities
 {
     /// <summary>
-    /// Represents a wrapped Terraria player object.
+    /// Represents a Terraria player <see cref="Entity"/> in the world.
     /// </summary>
     public abstract partial class Player : Entity, ICommandSender, ITeleportable, ILiving
     {
@@ -18,16 +18,6 @@ namespace Frostspark.API.Entities
         /// </summary>
         /// <param name="reason">Kick reason</param>
         public abstract void Kick(string reason = null);
-
-        /// <summary>
-        /// Returns this player's native index.
-        /// </summary>
-        public abstract int Index { get; }
-
-        /// <summary>
-        /// Returns whether or not this player object has valid connected player backing.
-        /// </summary>
-        public abstract bool IsValid { get; }
 
         public abstract string LogName { get; }
 

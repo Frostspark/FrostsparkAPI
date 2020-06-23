@@ -1,7 +1,7 @@
 ﻿namespace Frostspark.API.Entities
 {
     /// <summary>
-    /// Represents a wrapped Terraria item object.
+    /// Represents a Terraria item <see cref="Entity"/> in the world.
     /// </summary>
     public abstract class Item : Entity
     {

@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\ProjectileList.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Collections\EntityList.cs" />
     <Compile Include="Entities\Interfaces\ILiving.cs" />
