@@ -15,7 +15,7 @@ namespace Frostspark.API
 
         public abstract EntityList<NPC> NPCs { get; }
 
-        public abstract EntityList<Projectile> Projectiles { get; }
+        public abstract ProjectileList Projectiles { get; }
 
         public abstract EntityList<Item> Items { get; }
 
