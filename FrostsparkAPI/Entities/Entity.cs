@@ -38,6 +38,5 @@ namespace Frostspark.API.Entities
         /// This means that once this entity is removed, and its index reassigned, this will still return false.
         /// </summary>
         public abstract bool Active { get; }
-
     }
 }
