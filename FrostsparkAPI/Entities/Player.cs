@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using Frostspark.API.Entities.Interfaces;
+using Frostspark.API.Structures;
 
 namespace Frostspark.API.Entities
 {
@@ -40,11 +41,11 @@ namespace Frostspark.API.Entities
 
         public abstract void SendInfoMessage(string s);
 
-        public abstract void TeleportToPos(float x, float y, byte effect = 1);
+        public abstract void TeleportToPos(float x, float y, TeleportationInfo info = default);
 
-        public abstract void TeleportToTile(int x, int y, byte effect = 1);
+        public abstract void TeleportToTile(int x, int y, TeleportationInfo info = default);
 
-        public abstract void TeleportToEntity(Entity target, byte effect = 1);
+        public abstract void TeleportToEntity(Entity target, TeleportationInfo info = default);
 
         public abstract void Hurt(int damage, bool crit = false);
 
