@@ -19,6 +19,8 @@ namespace Frostspark.API.Utilities
         public readonly byte G;
         public readonly byte B;
 
+        public string Hex => $"{R:X2}{G:X2}{B:X2}";
+
         public override bool Equals(object obj)
         {
             return obj is Color color && Equals(color);

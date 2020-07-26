@@ -30,10 +30,8 @@ namespace Frostspark.API.Entities
         /// Sends a string message to this player with the specified default colour.
         /// </summary>
         /// <param name="message">The string message to send</param>
-        /// <param name="r">Red byte of unformatted text color value</param>
-        /// <param name="g">Green byte of unformatted text color value</param>
-        /// <param name="b">Blue byte of unformatted text color value</param>
-        public abstract void SendMessage(string message, byte r = 255, byte g = 255, byte b = 255);
+        /// <param name="color">The base color of the message</param>
+        public abstract void SendMessage(string message, Utilities.Color color);
 
         public abstract void SendSuccessMessage(string s);
 
