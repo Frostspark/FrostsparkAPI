@@ -15,19 +15,26 @@
         /// <summary>
         /// Sends a success message to this command sender.
         /// </summary>
-        /// <param name="s">The message string</param>
-        void SendSuccessMessage(string s);
+        /// <param name="msg">The message string</param>
+        void SendSuccessMessage(string msg);
 
         /// <summary>
         /// Sends an error message to this command sender.
         /// </summary>
-        /// <param name="s">The message string</param>
-        void SendErrorMessage(string s);
+        /// <param name="msg">The message string</param>
+        void SendErrorMessage(string msg);
 
         /// <summary>
         /// Sends an info message to this command sender.
         /// </summary>
-        /// <param name="s">The message string</param>
-        void SendInfoMessage(string s);
+        /// <param name="msg">The message string</param>
+        void SendInfoMessage(string msg);
+
+        /// <summary>
+        /// Determines if the sender has a given permission
+        /// </summary>
+        /// <param name="perm">The permission to check</param>
+        /// <returns></returns>
+        bool HasPermission(string perm);
     }
 }

@@ -55,5 +55,7 @@ namespace Frostspark.API.Entities
         /// Respawns this player.
         /// </summary>
         public abstract void Respawn();
+
+        public abstract bool HasPermission(string perm);
     }
 }
