@@ -57,5 +57,10 @@ namespace Frostspark.API.Entities
         public abstract void Respawn();
 
         public abstract bool HasPermission(string perm);
+
+        /// <summary>
+        /// Whether or not this player is considered a server operator and has all permissions.
+        /// </summary>
+        public abstract bool Operator { get; }
     }
 }
