@@ -101,6 +101,7 @@
     <Compile Include="Events\Interfaces\ICancellable.cs" />
     <Compile Include="Events\Players\PlayerDisconnectEvent.cs" />
     <Compile Include="Events\Players\PlayerKickEvent.cs" />
+    <Compile Include="Events\Players\PlayerPermissionEvent.cs" />
     <Compile Include="Events\Players\PlayerTeleportEvent.cs" />
     <Compile Include="Events\Players\PlayerUpdateInventoryEvent.cs" />
     <Compile Include="Events\Server\GameStartEvent.cs" />

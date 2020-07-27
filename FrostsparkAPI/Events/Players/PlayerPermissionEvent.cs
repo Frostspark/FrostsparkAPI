@@ -24,7 +24,7 @@ namespace Frostspark.API.Events.Players
 
         public enum PermissionResult
         {
-            None
+            None,
             Granted,
             Denied
         }
