@@ -61,6 +61,6 @@ namespace Frostspark.API.Entities
         /// <summary>
         /// Whether or not this player is considered a server operator and has all permissions.
         /// </summary>
-        public abstract bool Operator { get; }
+        public abstract bool Operator { get; set; }
     }
 }
