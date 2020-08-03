@@ -12,7 +12,7 @@ namespace Frostspark.API.Entities
         /// <summary>
         /// The IP <see cref="EndPoint"/> (address + port) this player is connected from.
         /// </summary>
-        public abstract IPEndPoint IP { get; protected set; }
+        public abstract IPEndPoint RemoteAddress { get; protected set; }
 
         /// <summary>
         /// Removes this player from the server with an optional message.
