@@ -19,11 +19,7 @@ namespace Frostspark.API.Events.Players
 
         /// <summary>
         /// The slot that will be assigned to the player.
-        /// <para>
-        /// Be aware that assigning a slot through this setter may cause issues if the slot is already taken. Use <see cref="PlayerList.BySlot(int)"/> to check if the slot is free.
-        /// </para>
-        /// Setting this to null will cause the server to assign one on its own.
         /// </summary>
-        public byte? Slot { get; set; }
+        public byte Slot { get; }
     }
 }
