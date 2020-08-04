@@ -2,13 +2,11 @@
 
 namespace Frostspark.API.Events.Entities
 {
-    public class EntitySpawnEvent : Event, ICancellable
+    public class EntitySpawnEvent : EntityEvent, ICancellable
     {
-        public EntitySpawnEvent(API.Server server) : base(server)
+        public EntitySpawnEvent(Entity ent, API.Server server) : base(ent, server)
         {
         }
-
-        public Entity Entity { get; private set; }
 
         public bool Cancelled { get; set; }
     }

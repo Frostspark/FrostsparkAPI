@@ -17,7 +17,7 @@ namespace Frostspark.API
 
         public abstract ProjectileList Projectiles { get; }
 
-        public abstract EntityList<Item> Items { get; }
+        public abstract EntityList<DroppedItem> Items { get; }
 
         public abstract PluginManager Plugins { get; }
 
