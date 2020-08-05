@@ -6,16 +6,11 @@ namespace Frostspark.API.Events.Players
     /// <summary>
     /// Fired when a player starts connecting to the server.
     /// </summary>
-    public class PlayerConnectEvent : Event
+    public class PlayerConnectEvent : PlayerEvent
     {
-        public PlayerConnectEvent(API.Server server) : base(server)
+        public PlayerConnectEvent(Player player, API.Server server) : base(player, server)
         {
         }
-
-        /// <summary>
-        /// The player that's connecting
-        /// </summary>
-        public Player Player { get; }
 
         /// <summary>
         /// The client version the client is reporting.

@@ -19,6 +19,8 @@ namespace Frostspark.API
 
         public abstract EntityList<DroppedItem> Items { get; }
 
+        public abstract World.World World { get; }
+
         public abstract PluginManager Plugins { get; }
 
         public abstract Logger Log { get; }

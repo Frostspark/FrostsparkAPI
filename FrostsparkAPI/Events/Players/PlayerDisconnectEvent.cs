@@ -11,15 +11,10 @@ namespace Frostspark.API.Events.Players
     /// Fired when a player disconnects from the server.
     /// <para>This occurs after <see cref="PlayerKickEvent"/> if this is an involuntary disconnection.</para>
     /// </summary>
-    public class PlayerDisconnectEvent : Event
+    public class PlayerDisconnectEvent : PlayerEvent
     {
-        public PlayerDisconnectEvent(API.Server server) : base(server)
+        public PlayerDisconnectEvent(Player player, API.Server server) : base(player, server)
         {
         }
-
-        /// <summary>
-        /// The player that has disconnected.
-        /// </summary>
-        public Player Player { get; }
     }
 }
