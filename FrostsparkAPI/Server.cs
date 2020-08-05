@@ -9,24 +9,24 @@ namespace Frostspark.API
     /// <summary>
     /// Represents an underlying server engine.
     /// </summary>
-    public abstract class Server
+    public interface Server
     {
-        public abstract EntityList<Player> Players { get; }
+        EntityList<Player> Players { get; }
 
-        public abstract EntityList<NPC> NPCs { get; }
+        EntityList<NPC> NPCs { get; }
 
-        public abstract ProjectileList Projectiles { get; }
+        ProjectileList Projectiles { get; }
 
-        public abstract EntityList<DroppedItem> Items { get; }
+        EntityList<DroppedItem> Items { get; }
 
-        public abstract World.World World { get; }
+        World.World World { get; }
 
-        public abstract PluginManager Plugins { get; }
+        PluginManager Plugins { get; }
 
-        public abstract Logger Log { get; }
+        Logger Log { get; }
 
-        public abstract EventManager Events { get; }
+        EventManager Events { get; }
 
-        public abstract void Initialize();
+        void Initialize();
     }
 }

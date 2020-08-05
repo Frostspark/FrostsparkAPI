@@ -38,6 +38,6 @@ namespace Frostspark.API.World
         /// <summary>
         /// The tile's texture frame
         /// </summary>
-        public abstract Vector2D<int> Frame { get; set; }
+        public abstract Vector2D<short> Frame { get; set; }
     }
 }

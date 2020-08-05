@@ -82,15 +82,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\ProjectileList.cs" />
+    <Compile Include="Entities\Chest.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Collections\EntityList.cs" />
     <Compile Include="Entities\Interfaces\ILiving.cs" />
-    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\DroppedItem.cs" />
     <Compile Include="Entities\Player.MovementData.ButtonInformation.cs" />
     <Compile Include="Entities\Player.MovementData.cs" />
     <Compile Include="Entities\Player.MovementData.MovementInformation.cs" />
     <Compile Include="Entities\Player.PlayerData.cs" />
     <Compile Include="Enums\TeleportEffectType.cs" />
+    <Compile Include="Events\Chest\ChestCloseEvent.cs" />
+    <Compile Include="Events\Chest\ChestEvent.cs" />
+    <Compile Include="Events\Chest\ChestOpenEvent.cs" />
+    <Compile Include="Events\Chest\ChestRenameEvent.cs" />
+    <Compile Include="Events\Chest\ChestUpdateItemEvent.cs" />
+    <Compile Include="Events\Entities\EntityDespawnEvent.cs" />
+    <Compile Include="Events\Entities\EntityEvent.cs" />
     <Compile Include="Events\Entities\EntitySpawnEvent.cs" />
     <Compile Include="Events\Event.cs" />
     <Compile Include="Entities\NPC.cs" />
@@ -99,12 +107,17 @@
     <Compile Include="Events\EventManager.cs" />
     <Compile Include="Events\Interfaces\IAsynchronous.cs" />
     <Compile Include="Events\Interfaces\ICancellable.cs" />
+    <Compile Include="Events\Items\ItemEvent.cs" />
     <Compile Include="Events\Players\PlayerDisconnectEvent.cs" />
+    <Compile Include="Events\Players\PlayerEvent.cs" />
+    <Compile Include="Events\Players\PlayerHitBlockEvent.cs" />
     <Compile Include="Events\Players\PlayerKickEvent.cs" />
     <Compile Include="Events\Players\PlayerPermissionEvent.cs" />
     <Compile Include="Events\Players\PlayerTeleportEvent.cs" />
     <Compile Include="Events\Players\PlayerUpdateInventoryEvent.cs" />
     <Compile Include="Events\Server\GameStartEvent.cs" />
+    <Compile Include="Inventories\Inventory.cs" />
+    <Compile Include="Inventories\ItemStack.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Events\Players\PlayerAssignSlotEvent.cs" />
     <Compile Include="Events\Players\PlayerConnectEvent.cs" />
@@ -126,6 +139,9 @@
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Vector2D.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="World\Tile.cs" />
+    <Compile Include="World\TileLiquidType.cs" />
+    <Compile Include="World\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Events\NPC\" />

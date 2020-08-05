@@ -6,17 +6,12 @@ namespace Frostspark.API.Events.Players
     /// Fired when a player updates their movement variables (speed, position, and controls)
     /// <para>For visual player character updates, see <seealso cref="PlayerUpdateCharacterEvent"/></para>
     /// </summary>
-    public class PlayerUpdateMovementEvent : Event
+    public class PlayerUpdateMovementEvent : PlayerEvent
     {
-        public PlayerUpdateMovementEvent(API.Server server) : base(server)
+        public PlayerUpdateMovementEvent(API.Entities.Player player, API.Server server) : base(player, server)
         {
 
         }
-
-        /// <summary>
-        /// The player whose movement info is being updated.
-        /// </summary>
-        public Player Player { get; }
 
         /// <summary>
         /// The new movement information for this player.
