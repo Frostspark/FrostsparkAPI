@@ -4,26 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Frostspark.API.Entities;
+using Frostspark.API.Inventories;
 
 namespace Frostspark.API.Events.Players
 {
     /// <summary>
     /// Fired whenever a player updates their inventory.
     /// </summary>
-    public class PlayerUpdateInventoryEvent : Event
+    public class PlayerUpdateInventoryEvent : PlayerEvent
     {
-        public PlayerUpdateInventoryEvent(API.Server server) : base(server)
+        public PlayerUpdateInventoryEvent(API.Entities.Player player, API.Server server) : base(player, server)
         {
         }
 
         /// <summary>
-        /// The player updating their inventory.
-        /// </summary>
-        public Player Player { get; }
-
-        /// <summary>
         /// The slot being updated
         /// </summary>
-        public int Slot { get; }
+        public int Slot { get; set; }
+
+        /// <summary>
+        /// The item stack the player is setting to their inventory.
+        /// </summary>
+        public ItemStack Item { get; set; }
     }
 }

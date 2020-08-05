@@ -26,7 +26,7 @@ namespace Frostspark.API.Events.Players
 
         /// <summary>
         /// Whether or not the data will be force-updated.
-        /// <para>If this is true, then the data will be forcibly re-sent to the client.</para>
+        /// <para>If this is true, then the data will be forcibly re-sent to the client, rather than silently updated for everyone else.</para>
         /// </summary>
         public bool ForceUpdate { get; set; }
     }

@@ -8,18 +8,21 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.Players
 {
-    public class PlayerPermissionEvent : Event
+    public class PlayerPermissionEvent : PlayerEvent
     {
-        public PlayerPermissionEvent(API.Server server, Player player, string permission) : base(server)
+        public PlayerPermissionEvent(API.Server server, Player player, string permission) : base(player, server)
         {
-            Player = player;
             Permission = permission;
         }
 
-        public Player Player { get; }
-
+        /// <summary>
+        /// The permission node being checked.
+        /// </summary>
         public string Permission { get; }
 
+        /// <summary>
+        /// The result of the permission check.
+        /// </summary>
         public PermissionResult Result { get; set; }
 
         public enum PermissionResult
