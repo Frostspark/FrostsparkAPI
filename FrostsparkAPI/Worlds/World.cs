@@ -1,10 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.World
+namespace Frostspark.API.Worlds
 {
     /// <summary>
     /// Represents the game world - an abstract wrapper over Terraria's tile array, and associated properties.

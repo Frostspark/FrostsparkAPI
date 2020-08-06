@@ -1,5 +1,5 @@
 ﻿using Frostspark.API.Entities;
-using Frostspark.API.World;
+using Frostspark.API.Worlds;
 
 using System;
 using System.Collections.Generic;
@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.Players
 {
-    public class PlayerHitBlockEvent : PlayerEvent
+    public class PlayerHitBlockEvent : PlayerEvent, ICancellable
     {
-        public PlayerHitBlockEvent(Player player, Tile tile, API.Server server) : base(player, server)
+        public PlayerHitBlockEvent(Player player, Tile tile, byte damage, API.Server server) : base(player, server)
         {
             Tile = tile;
+            Damage = damage;
         }
 
         /// <summary>
@@ -24,7 +25,8 @@ namespace Frostspark.API.Events.Players
         /// <summary>
         /// The hitpoints the tile will be damaged for.
         /// </summary>
-        public byte Damage { get; set; }
+        public byte Damage { get; }
 
+        public bool Cancelled { get; set; }
     }
 }

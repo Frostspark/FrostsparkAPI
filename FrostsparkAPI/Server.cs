@@ -19,7 +19,7 @@ namespace Frostspark.API
 
         EntityList<DroppedItem> Items { get; }
 
-        World.World World { get; }
+        Worlds.World World { get; }
 
         PluginManager Plugins { get; }
 

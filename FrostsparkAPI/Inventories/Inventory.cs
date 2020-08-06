@@ -15,10 +15,10 @@ namespace Frostspark.API.Inventories
         public abstract int Size { get; }
 
         /// <summary>
-        /// Retrieves or sets an item inside this inventory.
+        /// Retrieves an itemstack inside this inventory.
         /// </summary>
         /// <param name="slot">The item slot</param>
         /// <returns></returns>
-        public abstract ItemStack this[int slot] { get; set; }
+        public abstract ItemStack this[int slot] { get; }
     }
 }

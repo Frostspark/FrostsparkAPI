@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.World
+namespace Frostspark.API.Worlds
 {
     public abstract class Tile
     {
@@ -39,5 +39,10 @@ namespace Frostspark.API.World
         /// The tile's texture frame
         /// </summary>
         public abstract Vector2D<short> Frame { get; set; }
+
+        /// <summary>
+        /// The tile's health.
+        /// </summary>
+        public abstract byte Health { get; set; }
     }
 }

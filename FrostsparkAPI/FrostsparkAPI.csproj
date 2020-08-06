@@ -108,6 +108,7 @@
     <Compile Include="Events\Interfaces\IAsynchronous.cs" />
     <Compile Include="Events\Interfaces\ICancellable.cs" />
     <Compile Include="Events\Items\ItemEvent.cs" />
+    <Compile Include="Events\NPC\NPCEvent.cs" />
     <Compile Include="Events\Players\PlayerDisconnectEvent.cs" />
     <Compile Include="Events\Players\PlayerEvent.cs" />
     <Compile Include="Events\Players\PlayerHitBlockEvent.cs" />
@@ -119,7 +120,6 @@
     <Compile Include="Inventories\Inventory.cs" />
     <Compile Include="Inventories\ItemStack.cs" />
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Events\Players\PlayerAssignSlotEvent.cs" />
     <Compile Include="Events\Players\PlayerConnectEvent.cs" />
     <Compile Include="Events\Players\PlayerUpdateCharacterEvent.cs" />
     <Compile Include="Events\Players\PlayerUpdateMovementEvent.cs" />
@@ -139,12 +139,10 @@
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Utilities\Vector2D.cs" />
     <Compile Include="Utils.cs" />
-    <Compile Include="World\Tile.cs" />
-    <Compile Include="World\TileLiquidType.cs" />
-    <Compile Include="World\World.cs" />
+    <Compile Include="Worlds\Tile.cs" />
+    <Compile Include="Worlds\TileLiquidType.cs" />
+    <Compile Include="Worlds\World.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Events\NPC\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

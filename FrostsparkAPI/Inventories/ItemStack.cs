@@ -15,21 +15,21 @@ namespace Frostspark.API.Inventories
         /// <summary>
         /// The item's type.
         /// </summary>
-        public abstract int Type { get; }
+        public abstract int Type { get; set; }
         
         /// <summary>
         /// The item stack's quantity.
         /// </summary>
-        public abstract short Stack { get; }
+        public abstract int Stack { get; set; }
 
         /// <summary>
         /// The item's maximum stack quantity.
         /// </summary>
-        public abstract short MaxStack { get; }
+        public abstract int MaxStack { get; }
 
         /// <summary>
         /// The item stack's prefix.
         /// </summary>
-        public abstract byte Prefix { get; }
+        public abstract byte Prefix { get; set; }
     }
 }
