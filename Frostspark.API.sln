@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostsparkAPI", "FrostsparkAPI\FrostsparkAPI.csproj", "{A8186A57-1D5D-455D-8C44-A8CC1FF0CB57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frostspark.API", "Frostspark.API\Frostspark.API.csproj", "{A8186A57-1D5D-455D-8C44-A8CC1FF0CB57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
