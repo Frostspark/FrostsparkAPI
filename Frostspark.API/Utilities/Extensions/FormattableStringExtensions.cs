@@ -18,28 +18,27 @@ namespace Frostspark.API.Utilities.Extensions
 
             using var enumerator = strings.GetEnumerator();
 
-                if (!enumerator.MoveNext())
-                    return $"";
+            if (!enumerator.MoveNext())
+                return $"";
+
+            if (enumerator.Current != null)
+            {
+                sb.Append($"{{{id}}}");
+                id++;
+            }
+
+            while (enumerator.MoveNext())
+            {
+                sb.Append(separator);
 
                 if (enumerator.Current != null)
                 {
                     sb.Append($"{{{id}}}");
                     id++;
                 }
-
-                while (enumerator.MoveNext())
-                {
-                    sb.Append(separator);
-
-                    if (enumerator.Current != null)
-                    {
-                        sb.Append($"{{{id}}}");
-                        id++;
-                    }
-                }
+            }
 
             return FormattableStringFactory.Create(sb.ToString(), fmts);
-
         }
     }
 }
