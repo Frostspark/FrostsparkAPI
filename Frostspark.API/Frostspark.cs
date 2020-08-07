@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Frostspark.API.Utilities;
+
+using System;
 
 namespace Frostspark.API
 {
@@ -9,27 +11,28 @@ namespace Frostspark.API
     {
         private static bool Initialized;
 
-        private static Server ServerInst;
+        private static Server Instance;
+
         public static Server Server
         {
             get
             {
                 AssertAPIState(true);
-                return ServerInst;
+                return Instance;
             }
             internal set
             {
                 AssertAPIState(false);
-                ServerInst = value;
+                Instance = value;
             }
         }
 
         private static void AssertAPIState(bool init)
         {
             if (init)
-                Utils.AssertState(() => ServerInst != null, "The server API has not been initialized yet!");
+                Assert.State(() => Instance != null, "The server API has not been initialized yet!");
             else
-                Utils.AssertState(() => ServerInst == null, "The server API has already been initialized!");
+                Assert.State(() => Instance == null, "The server API has already been initialized!");
         }
 
         public static void Initialize(Server server)

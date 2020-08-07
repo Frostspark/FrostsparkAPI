@@ -136,9 +136,10 @@
     <Compile Include="Entities\Interfaces\ITeleportable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structures\TeleportationInfo.cs" />
+    <Compile Include="Utilities\Assert.cs" />
     <Compile Include="Utilities\Color.cs" />
+    <Compile Include="Utilities\Extensions\FormattableStringExtensions.cs" />
     <Compile Include="Utilities\Vector2D.cs" />
-    <Compile Include="Utils.cs" />
     <Compile Include="Worlds\Tile.cs" />
     <Compile Include="Worlds\TileLiquidType.cs" />
     <Compile Include="Worlds\World.cs" />
