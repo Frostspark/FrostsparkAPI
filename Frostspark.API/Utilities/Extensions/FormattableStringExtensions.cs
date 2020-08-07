@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Utilities.Extensions
 {
-    public class FormattableStringExtensions
+    public static class FormattableStringExtensions
     {
         public static FormattableString Join(string separator, IEnumerable<FormattableString> strings)
         {
@@ -16,8 +16,8 @@ namespace Frostspark.API.Utilities.Extensions
             List<FormattableString> fmts = new List<FormattableString>();
             int id = 0;
 
-            using (var enumerator = strings.GetEnumerator())
-            {
+            using var enumerator = strings.GetEnumerator();
+
                 if (!enumerator.MoveNext())
                     return $"";
 
@@ -37,8 +37,6 @@ namespace Frostspark.API.Utilities.Extensions
                         id++;
                     }
                 }
-
-            }
 
             return FormattableStringFactory.Create(sb.ToString(), fmts);
 

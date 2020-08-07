@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frostspark.API", "Frostspark.API\Frostspark.API.csproj", "{A8186A57-1D5D-455D-8C44-A8CC1FF0CB57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frostspark.API", "Frostspark.API\Frostspark.API.csproj", "{7339E731-B815-4FE0-A25E-2F54907D2B96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A8186A57-1D5D-455D-8C44-A8CC1FF0CB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8186A57-1D5D-455D-8C44-A8CC1FF0CB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8186A57-1D5D-455D-8C44-A8CC1FF0CB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8186A57-1D5D-455D-8C44-A8CC1FF0CB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7339E731-B815-4FE0-A25E-2F54907D2B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7339E731-B815-4FE0-A25E-2F54907D2B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7339E731-B815-4FE0-A25E-2F54907D2B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7339E731-B815-4FE0-A25E-2F54907D2B96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
