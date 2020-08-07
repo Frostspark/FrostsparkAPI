@@ -38,5 +38,10 @@ namespace Frostspark.API.Plugins
         {
             plugin.Log = logger;
         }
+
+        protected static void SetServer(Plugin plugin, Server server)
+        {
+            plugin.Server = server;
+        }
     }
 }
