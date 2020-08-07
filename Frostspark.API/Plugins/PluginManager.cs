@@ -1,14 +1,18 @@
 ﻿using Frostspark.API.Logging;
 
+using System;
+
 namespace Frostspark.API.Plugins
 {
     public abstract class PluginManager
     {
-        public abstract void LoadPlugin(string name);
+        public abstract PluginLoadResult LoadPlugin(string name);
 
         public abstract Plugin GetPlugin(string name);
 
-        public abstract void UnloadPlugin(string name);
+        public abstract bool IsLoaded(string name);
+
+        public abstract PluginUnloadResult UnloadPlugin(string name);
 
         protected static void SetEnabled(Plugin plugin)
         {
@@ -38,10 +42,23 @@ namespace Frostspark.API.Plugins
         {
             plugin.Log = logger;
         }
+    }
 
-        protected static void SetServer(Plugin plugin, Server server)
-        {
-            plugin.Server = server;
-        }
+    [Flags]
+    public enum PluginLoadResult : byte
+    {
+        Success = 1,
+        InvalidBinary = 2,
+        AlreadyLoaded = 4,
+        Exception = 8,
+        NotFound = 16
+    }
+
+    [Flags]
+    public enum PluginUnloadResult : byte
+    {
+        Found = 1,
+        Exceptions = 2,
+        Delayed = 4
     }
 }

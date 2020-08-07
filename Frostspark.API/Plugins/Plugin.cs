@@ -36,11 +36,6 @@ namespace Frostspark.API.Plugins
         public Logger Log { get; internal set; }
 
         /// <summary>
-        /// The server instance this plugin is assigned to.
-        /// </summary>
-        public Server Server { get; internal set; }
-
-        /// <summary>
         /// Called when this plugin is enabled.
         /// </summary>
         public abstract void Enable();

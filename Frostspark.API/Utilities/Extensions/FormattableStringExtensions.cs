@@ -24,6 +24,7 @@ namespace Frostspark.API.Utilities.Extensions
             if (enumerator.Current != null)
             {
                 sb.Append($"{{{id}}}");
+                fmts.Add(enumerator.Current);
                 id++;
             }
 
@@ -34,11 +35,12 @@ namespace Frostspark.API.Utilities.Extensions
                 if (enumerator.Current != null)
                 {
                     sb.Append($"{{{id}}}");
+                    fmts.Add(enumerator.Current);
                     id++;
                 }
             }
 
-            return FormattableStringFactory.Create(sb.ToString(), fmts);
+            return FormattableStringFactory.Create(sb.ToString(), fmts.ToArray());
         }
     }
 }
