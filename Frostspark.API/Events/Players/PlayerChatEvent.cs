@@ -31,7 +31,7 @@ namespace Frostspark.API.Events.Players
         /// <summary>
         /// A list of players that will receive this message.
         /// </summary>
-        public IEnumerable<Player> Recipients { get; set; }
+        public IList<Player> Recipients { get; set; }
 
         public bool Cancelled { get; set; }
     }
