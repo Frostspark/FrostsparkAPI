@@ -1,4 +1,6 @@
 ﻿
+using Frostspark.API.Worlds.Time;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,5 +36,10 @@ namespace Frostspark.API.Worlds
         /// The world's name
         /// </summary>
         public abstract string Name { get; }
+
+        /// <summary>
+        /// Gets or sets the world's current time.
+        /// </summary>
+        public abstract WorldTime Time { get; set; }
     }
 }

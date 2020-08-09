@@ -53,6 +53,7 @@ namespace Frostspark.API.Plugins
         /// <summary>
         /// Called when this plugin is about to be unloaded.
         /// <para>You should take extreme care to end all activities not managed by Frostspark as to not block the unloading process as soon as this is called.</para>
+        /// It is okay to block here for a couple of additional milliseconds, as Frostspark will request the GC to clean up your plugin causing a short stop anyway.
         /// </summary>
         public abstract void Unload();
     }
