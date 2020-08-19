@@ -42,6 +42,11 @@ namespace Frostspark.API.Plugins
         {
             plugin.Log = logger;
         }
+
+        protected static void SetDataFolder(Plugin plugin, string path)
+        {
+            plugin.DataFolder = path;
+        }
     }
 
     [Flags]

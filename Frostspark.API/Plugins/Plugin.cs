@@ -36,6 +36,11 @@ namespace Frostspark.API.Plugins
         public Logger Log { get; internal set; }
 
         /// <summary>
+        /// Where this plugin is supposed to store its configuration files and other data.
+        /// </summary>
+        public string DataFolder { get; internal set; }
+
+        /// <summary>
         /// Called when this plugin is enabled.
         /// </summary>
         public abstract void Enable();
