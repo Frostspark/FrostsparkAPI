@@ -1,5 +1,7 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using Frostspark.API.Entities.Interfaces;
+using Frostspark.API.Plugins;
 using Frostspark.API.Structures;
 
 namespace Frostspark.API.Entities
@@ -9,6 +11,11 @@ namespace Frostspark.API.Entities
     /// </summary>
     public abstract partial class Player : Entity, ICommandSender, ITeleportable, ILiving
     {
+        /// <summary>
+        /// The metadata store for key-value information storage.
+        /// </summary>
+        internal MetadataStore PlayerMetadata;
+
         /// <summary>
         /// The IP <see cref="EndPoint"/> (address + port) this player is connected from.
         /// </summary>
@@ -62,5 +69,91 @@ namespace Frostspark.API.Entities
         /// Whether or not this player is considered a server operator and has all permissions.
         /// </summary>
         public abstract bool Operator { get; set; }
+
+        /// <summary>
+        /// Retrieves a metadata value from this player at the specified key.
+        /// </summary>
+        /// <typeparam name="T">The data type</typeparam>
+        /// <param name="plugin">The plugin calling this method.</param>
+        /// <param name="global">Whether the metadata node is global or plugin-local.</param>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value output. <see cref="default"/> if not found.</param>
+        /// <returns>Whether or not the value exists and was assigned to <paramref name="value"/></returns>
+        public bool GetMetadata<T>(Plugin plugin, bool global, string key, out T value)
+        {
+            if (plugin == null)
+                throw new ArgumentNullException("The plugin instance cannot be null!");
+
+            if (global)
+            {
+                return PlayerMetadata.GetGlobalValue(key, out value);
+            }
+            else
+            {
+                return PlayerMetadata.GetLocalValue(plugin, key, out value);
+            }
+
+        }
+
+        /// <summary>
+        /// Assigns a metadata value to this player at the specified key.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="plugin">The plugin calling this method.</param>
+        /// <param name="global">Whether the metadata node is global or plugin-local.</param>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value output. <see cref="default"/> if not found.</param>
+        public void SetMetadata<T>(Plugin plugin, bool global, string key, T value)
+        {
+            if (plugin == null)
+                throw new ArgumentNullException("The plugin instance cannot be null!");
+
+            if (global)
+            {
+                PlayerMetadata.SetGlobalValue(plugin, key, value);
+            }
+            else
+            {
+                PlayerMetadata.SetLocalValue(plugin, key, value);
+            }
+        }
+
+        /// <summary>
+        /// Clears a metadata value from this player at the specified key.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="plugin">The plugin calling this method.</param>
+        /// <param name="global">Whether the metadata node is global or plugin-local.</param>
+        /// <param name="key">The key.</param>
+        /// <returns>Whether or not a value was removed.</returns>
+        public bool ClearMetadata<T>(Plugin plugin, bool global, string key)
+        {
+            if (plugin == null)
+                throw new ArgumentNullException("The plugin instance cannot be null!");
+
+            if (global)
+            {
+                return PlayerMetadata.ClearGlobalValue(key);
+            }
+            else
+            {
+                return PlayerMetadata.ClearLocalValue(plugin, key);
+            }
+        }
+
+        protected bool GetGlobalMetadata<T>(string key, out T value)
+        {
+            return PlayerMetadata.GetGlobalValue(key, out value);
+        }
+
+        protected void SetGlobalMetadata<T>(string key, T value)
+        {
+            PlayerMetadata.SetGlobalValue(null, key, value);
+        }
+
+        protected bool ClearGlobalMetadata(string key)
+        {
+            return PlayerMetadata.ClearGlobalValue(key);
+        }
     }
 }
