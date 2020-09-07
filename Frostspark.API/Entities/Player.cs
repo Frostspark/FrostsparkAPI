@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+
 using Frostspark.API.Entities.Interfaces;
 using Frostspark.API.Plugins;
 using Frostspark.API.Structures;
@@ -14,7 +15,7 @@ namespace Frostspark.API.Entities
         /// <summary>
         /// The metadata store for key-value information storage.
         /// </summary>
-        internal MetadataStore PlayerMetadata;
+        protected MetadataStore Metadata;
 
         /// <summary>
         /// The IP <see cref="EndPoint"/> (address + port) this player is connected from.
@@ -86,11 +87,11 @@ namespace Frostspark.API.Entities
 
             if (global)
             {
-                return PlayerMetadata.GetGlobalValue(key, out value);
+                return Metadata.GetGlobalValue(key, out value);
             }
             else
             {
-                return PlayerMetadata.GetLocalValue(plugin, key, out value);
+                return Metadata.GetLocalValue(plugin, key, out value);
             }
 
         }
@@ -110,11 +111,11 @@ namespace Frostspark.API.Entities
 
             if (global)
             {
-                PlayerMetadata.SetGlobalValue(plugin, key, value);
+                Metadata.SetGlobalValue(plugin, key, value);
             }
             else
             {
-                PlayerMetadata.SetLocalValue(plugin, key, value);
+                Metadata.SetLocalValue(plugin, key, value);
             }
         }
 
@@ -133,27 +134,27 @@ namespace Frostspark.API.Entities
 
             if (global)
             {
-                return PlayerMetadata.ClearGlobalValue(key);
+                return Metadata.ClearGlobalValue(key);
             }
             else
             {
-                return PlayerMetadata.ClearLocalValue(plugin, key);
+                return Metadata.ClearLocalValue(plugin, key);
             }
         }
 
         protected bool GetGlobalMetadata<T>(string key, out T value)
         {
-            return PlayerMetadata.GetGlobalValue(key, out value);
+            return Metadata.GetGlobalValue(key, out value);
         }
 
         protected void SetGlobalMetadata<T>(string key, T value)
         {
-            PlayerMetadata.SetGlobalValue(null, key, value);
+            Metadata.SetGlobalValue(null, key, value);
         }
 
         protected bool ClearGlobalMetadata(string key)
         {
-            return PlayerMetadata.ClearGlobalValue(key);
+            return Metadata.ClearGlobalValue(key);
         }
     }
 }
