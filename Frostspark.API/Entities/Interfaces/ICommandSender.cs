@@ -1,4 +1,7 @@
-﻿namespace Frostspark.API.Entities.Interfaces
+﻿using Frostspark.API.Utilities;
+using System;
+
+namespace Frostspark.API.Entities.Interfaces
 {
     public interface ICommandSender
     {
@@ -29,6 +32,13 @@
         /// </summary>
         /// <param name="msg">The message string</param>
         void SendInfoMessage(string msg);
+
+        /// <summary>
+        /// Sends a formatted message to this command sender.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="color"></param>
+        void SendFormattedMessage(FormattableString message, Color color);
 
         /// <summary>
         /// Determines if the sender has a given permission

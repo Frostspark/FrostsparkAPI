@@ -4,6 +4,7 @@ using System.Net;
 using Frostspark.API.Entities.Interfaces;
 using Frostspark.API.Plugins;
 using Frostspark.API.Structures;
+using Frostspark.API.Utilities;
 
 namespace Frostspark.API.Entities
 {
@@ -41,6 +42,8 @@ namespace Frostspark.API.Entities
         public abstract void SendErrorMessage(string s);
 
         public abstract void SendInfoMessage(string s);
+
+        public abstract void SendFormattedMessage(FormattableString message, Color color);
 
         public abstract void TeleportToPos(float x, float y, TeleportationInfo info = default);
 
