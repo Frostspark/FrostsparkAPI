@@ -1,4 +1,5 @@
 ﻿
+using Frostspark.API.Enums;
 using Frostspark.API.Worlds.Time;
 
 using System;
@@ -33,13 +34,23 @@ namespace Frostspark.API.Worlds
         public abstract int Height { get; }
 
         /// <summary>
-        /// The world's name
+        /// Gets or sets the world's name
         /// </summary>
-        public abstract string Name { get; }
+        public abstract string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the world's current time.
         /// </summary>
         public abstract WorldTime Time { get; set; }
+
+        /// <summary>
+        /// Gets or sets the world's difficulty type.
+        /// </summary>
+        public abstract WorldDifficulty Difficulty { get; set; }
+
+        /// <summary>
+        /// Gets or sets the world's hardmode value.
+        /// </summary>
+        public abstract bool Hardmode { get; set; }
     }
 }
