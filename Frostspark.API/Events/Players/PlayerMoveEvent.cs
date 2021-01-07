@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.Players
 {
+    /// <summary>
+    /// Fired whenever the player's character moves.
+    /// </summary>
     public class PlayerMoveEvent : PlayerEvent, ICancellable
     {
         public PlayerMoveEvent(Player player, API.Server server, Vector2D<float> from_position, Vector2D<float> to_position, bool is_implicit) : base(player, server)
@@ -19,7 +22,7 @@ namespace Frostspark.API.Events.Players
         }
 
         /// <summary>
-        /// Whether or not this move event is implicit (server simulation) or explicit (netcode induced)
+        /// Whether or not this move event is implicit (server simulation) or not (netcode induced)
         /// </summary>
         public bool Implicit { get; }
 
