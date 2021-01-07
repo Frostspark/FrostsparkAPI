@@ -7,17 +7,11 @@ namespace Frostspark.API.Events.Players
     /// <para>This includes but is not limited to their name, hairstyle, hair/eye/clothing colors, gender, visible misc items...</para>
     /// For movement updates, see <seealso cref="PlayerUpdateMovementEvent"/>
     /// </summary>
-    public class PlayerUpdateCharacterEvent : Event
+    public class PlayerUpdateCharacterEvent : PlayerEvent
     {
-        public PlayerUpdateCharacterEvent(API.Server server) : base(server)
+        public PlayerUpdateCharacterEvent(Player player, API.Server server) : base(player, server)
         {
-
         }
-
-        /// <summary>
-        /// The player whose data is being updated.
-        /// </summary>
-        public Player Player { get; }
 
         /// <summary>
         /// The new character data.

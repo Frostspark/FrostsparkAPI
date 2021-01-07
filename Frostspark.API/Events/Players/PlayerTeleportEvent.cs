@@ -8,16 +8,11 @@ using Frostspark.API.Utilities;
 
 namespace Frostspark.API.Events.Players
 {
-    public class PlayerTeleportEvent : Event, ICancellable
+    public class PlayerTeleportEvent : PlayerEvent, ICancellable
     {
-        public PlayerTeleportEvent(API.Server server) : base(server)
+        public PlayerTeleportEvent(Player player, API.Server server) : base(player, server)
         {
         }
-
-        /// <summary>
-        /// The player being teleported
-        /// </summary>
-        public Player Player { get; }
 
         /// <summary>
         /// The location where the player will end up.
