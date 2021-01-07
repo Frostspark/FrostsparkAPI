@@ -1,4 +1,5 @@
 ﻿using Frostspark.API.Entities;
+using Frostspark.API.Utilities;
 
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,11 @@ namespace Frostspark.API.Events.Players
 {
     public class PlayerMoveEvent : PlayerEvent, ICancellable
     {
-        public PlayerMoveEvent(Player player, API.Server server) : base(player, server)
+        public PlayerMoveEvent(Player player, API.Server server, Vector2D<float> from_position, Vector2D<float> to_position, bool is_implicit) : base(player, server)
         {
+            Implicit = is_implicit;
+            OldPosition = from_position;
+            NewPosition = to_position;
         }
 
         /// <summary>
@@ -20,9 +24,14 @@ namespace Frostspark.API.Events.Players
         public bool Implicit { get; }
 
         /// <summary>
-        /// The new movement status of the player.
+        /// Where this player moved from.
         /// </summary>
-        public Player.MovementData New { get; }
+        public Vector2D<float> OldPosition { get; private set; }
+
+        /// <summary>
+        /// Where this player has moved to.
+        /// </summary>
+        public Vector2D<float> NewPosition { get; set; }
 
         public bool Cancelled { get; set; }
     }

@@ -68,5 +68,20 @@ namespace Frostspark.API.Entities
         /// Whether or not this player is considered a server operator and has all permissions.
         /// </summary>
         public abstract bool Operator { get; set; }
+
+        /// <summary>
+        /// Returns a structure detailing what controls the remote player has currently pressed.
+        /// </summary>
+        public abstract ButtonInformation Buttons { get; }
+
+        /// <summary>
+        /// Returns a structure detailing miscellaneous metadata about the player's current movement state.
+        /// </summary>
+        public abstract MovementInformation MovementInfo { get; }
+
+        /// <summary>
+        /// Returns which inventory index the player currently has selected.
+        /// </summary>
+        public abstract byte SelectedItem { get; }
     }
 }

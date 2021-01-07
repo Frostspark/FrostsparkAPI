@@ -8,6 +8,8 @@ namespace Frostspark.API.Utilities
         public readonly T X;
         public readonly T Y;
 
+        public static readonly Vector2D<T> Default = new Vector2D<T>(default, default);
+
         public Vector2D(T x, T y)
         {
             X = x;
