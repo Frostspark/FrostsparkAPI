@@ -1,4 +1,4 @@
-﻿namespace Frostspark.API.Events
+﻿namespace Frostspark.API.Events.Interfaces
 {
     /// <summary>
     /// Represents an event that can be cancelled. An event, when cancelled, is not sent to server code for processing.

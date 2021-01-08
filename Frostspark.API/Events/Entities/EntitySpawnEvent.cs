@@ -1,4 +1,5 @@
 ﻿using Frostspark.API.Entities;
+using Frostspark.API.Events.Interfaces;
 
 namespace Frostspark.API.Events.Entities
 {
