@@ -1,4 +1,5 @@
-﻿using Frostspark.API.Collections;
+﻿using Frostspark.API.Chat;
+using Frostspark.API.Collections;
 using Frostspark.API.Entities;
 using Frostspark.API.Events;
 using Frostspark.API.Logging;
@@ -26,6 +27,8 @@ namespace Frostspark.API
         Logger Log { get; }
 
         EventManager Events { get; }
+
+        ChatManager Chat { get; }
 
         void Initialize();
     }
