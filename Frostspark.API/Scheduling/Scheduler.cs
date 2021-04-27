@@ -24,7 +24,7 @@ namespace Frostspark.API.Scheduling
         /// <param name="action"></param>
         /// <param name="ticks"></param>
         /// <returns></returns>
-        public abstract object RunTask(Plugin plugin, Action action, ulong ticks);
+        public abstract object RunTaskTicks(Plugin plugin, Action action, ulong ticks);
 
         /// <summary>
         /// Schedules a task to run synchronously in <paramref name="time"/> seconds.
@@ -53,7 +53,7 @@ namespace Frostspark.API.Scheduling
         /// <param name="time"></param>
         /// <param name="period"></param>
         /// <returns></returns>
-        public abstract object RunTask(Plugin plugin, Action action, ulong ticks, ulong period);
+        public abstract object RunTaskTicks(Plugin plugin, Action action, ulong ticks, ulong period);
 
         /// <summary>
         /// Schedules a task to run asynchronously next frame.
@@ -69,7 +69,7 @@ namespace Frostspark.API.Scheduling
         /// <param name="action"></param>
         /// <param name="ticks"></param>
         /// <returns></returns>
-        public abstract object RunTaskAsync(Plugin plugin, Action action, ulong ticks);
+        public abstract object RunTaskTicksAsync(Plugin plugin, Action action, ulong ticks);
 
         /// <summary>
         /// Schedules a task to run asynchronously in <paramref name="time"/> seconds.
@@ -98,7 +98,7 @@ namespace Frostspark.API.Scheduling
         /// <param name="time"></param>
         /// <param name="period"></param>
         /// <returns></returns>
-        public abstract object RunTaskAsync(Plugin plugin, Action action, ulong ticks, ulong period);
+        public abstract object RunTaskTicksAsync(Plugin plugin, Action action, ulong ticks, ulong period);
 
         /// <summary>
         /// Cancels a task using an object ticket.
