@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Frostspark.API.Events.Interfaces;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events
 {
-    public abstract class AsyncEventHandler<T> : AsyncEventHandler where T : Event
+    public abstract class AsyncEventHandler<T> : AsyncEventHandler where T : IEventHandlerCompatible
     {
-        public sealed override ValueTask HandleEvent(Event e)
+        public sealed override ValueTask HandleEvent(IEventHandlerCompatible e)
         {
             if (e is T t)
             {
@@ -25,7 +27,7 @@ namespace Frostspark.API.Events
 
     public abstract class AsyncEventHandler : EventHandler
     {
-        public abstract ValueTask HandleEvent(Event e);
+        public abstract ValueTask HandleEvent(IEventHandlerCompatible e);
 
         /// <summary>
         /// If set to true, this will suppress the server engine warnings about asynchronous code being called in synchronous event invokes without awaiting them.

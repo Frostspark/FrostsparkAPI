@@ -1,6 +1,8 @@
-﻿namespace Frostspark.API.Events
+﻿using Frostspark.API.Events.Interfaces;
+
+namespace Frostspark.API.Events
 {
-    public abstract class Event
+    public abstract class Event : IEventHandlerCompatible
     {
         protected Event(API.Server server)
         {

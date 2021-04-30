@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents an event that can be cancelled. An event, when cancelled, is not sent to server code for processing.
     /// </summary>
-    public interface ICancellable
+    public interface ICancellable : IEventHandlerCompatible
     {
         /// <summary>
         /// Whether or not this event is cancelled.
