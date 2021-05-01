@@ -5,7 +5,7 @@ namespace Frostspark.API.Events.Chests
 {
     public class ChestUpdateItemEvent : ChestEvent, ICancellable, IHasSource<Player>
     {
-        public ChestUpdateItemEvent(Player player, API.Entities.Chest chest, API.Server server) : base(chest, server)
+        public ChestUpdateItemEvent(Player player, Chest chest, API.Server server) : base(chest, server)
         {
             Player = player;
         }
