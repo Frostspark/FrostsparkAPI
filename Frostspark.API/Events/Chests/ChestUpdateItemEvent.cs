@@ -1,13 +1,7 @@
 ﻿using Frostspark.API.Entities;
 using Frostspark.API.Events.Interfaces;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Frostspark.API.Events.Chest
+namespace Frostspark.API.Events.Chests
 {
     public class ChestUpdateItemEvent : ChestEvent, ICancellable, IHasSource<Player>
     {

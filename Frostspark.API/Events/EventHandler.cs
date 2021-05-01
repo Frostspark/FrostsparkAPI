@@ -1,5 +1,4 @@
-﻿using Frostspark.API.Events.Interfaces;
-
+﻿
 using System;
 
 namespace Frostspark.API.Events

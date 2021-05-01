@@ -1,5 +1,4 @@
-﻿using System.Net;
-using Frostspark.API.Entities;
+﻿using Frostspark.API.Entities;
 
 namespace Frostspark.API.Events.Players
 {

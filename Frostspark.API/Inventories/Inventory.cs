@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Frostspark.API.Inventories
+﻿namespace Frostspark.API.Inventories
 {
     public abstract class Inventory
     {

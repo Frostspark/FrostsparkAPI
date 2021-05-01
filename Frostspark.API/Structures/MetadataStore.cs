@@ -1,9 +1,6 @@
 ﻿using Frostspark.API.Plugins;
 
-using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 
 namespace Frostspark.API.Structures
 {

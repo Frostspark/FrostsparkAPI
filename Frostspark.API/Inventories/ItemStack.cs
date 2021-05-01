@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Frostspark.API.Inventories
+﻿namespace Frostspark.API.Inventories
 {
     /// <summary>
     /// Represents an item stack stored inside an inventory.

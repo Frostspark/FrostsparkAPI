@@ -2,9 +2,7 @@
 using Frostspark.API.Events.Interfaces;
 using Frostspark.API.Utilities;
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Frostspark.API.Events.Server
 {

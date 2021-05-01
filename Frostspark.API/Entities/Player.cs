@@ -2,7 +2,6 @@
 using System.Net;
 
 using Frostspark.API.Entities.Interfaces;
-using Frostspark.API.Plugins;
 using Frostspark.API.Structures;
 using Frostspark.API.Utilities;
 

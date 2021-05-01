@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Frostspark.API.Entities;
+﻿using Frostspark.API.Entities;
 using Frostspark.API.Inventories;
 
 namespace Frostspark.API.Events.Players

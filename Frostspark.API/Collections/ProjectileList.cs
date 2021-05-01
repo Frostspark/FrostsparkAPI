@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Frostspark.API.Collections
+﻿namespace Frostspark.API.Collections
 {
     public abstract class ProjectileList : EntityList<Entities.Projectile>
     {
