@@ -10,11 +10,16 @@ namespace Frostspark.API.Events
         {
             if (e is T t)
             {
+                if (!Filter(t))
+                    return;
+
                 Handle(t);
             }
         }
 
         public abstract void Handle(T obj);
+
+        public virtual bool Filter(T t) => true;
 
         public override Type EventType => typeof(T);
 

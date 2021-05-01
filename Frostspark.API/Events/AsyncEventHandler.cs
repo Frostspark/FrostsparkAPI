@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 namespace Frostspark.API.Events
 {
     public abstract class AsyncEventHandler<T> : AsyncEventHandler where T : IEventHandlerCompatible
-    {
+    { 
+
         public sealed override ValueTask HandleEvent(IEventHandlerCompatible e)
         {
             if (e is T t)
             {
+                if (!Filter(t))
+                    return ValueTask.CompletedTask;
+
                 return Handle(t);
             }
 
@@ -18,6 +22,8 @@ namespace Frostspark.API.Events
         }
 
         public abstract ValueTask Handle(T obj);
+
+        public virtual bool Filter(T t) => true;
 
         public override Type EventType => typeof(T);
     }
