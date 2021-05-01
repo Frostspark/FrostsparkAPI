@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Collections
 {
-    public abstract class ProjectileList : EntityList<API.Entities.Projectile>
+    public abstract class ProjectileList : EntityList<Entities.Projectile>
     {
         /// <summary>
         /// Gets a projectile using the owner + identity pair.
@@ -14,7 +14,7 @@ namespace Frostspark.API.Collections
         /// <param name="owner">The player who owns the projectile.</param>
         /// <param name="identity">The client-given identity ID of the projectile</param>
         /// <returns></returns>
-        public abstract API.Entities.Projectile this[int owner, int identity]
+        public abstract Entities.Projectile this[int owner, int identity]
         {
             get;
         }

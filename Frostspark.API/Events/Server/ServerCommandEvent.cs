@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Events.Players
+namespace Frostspark.API.Events.Server
 {
-    public class PlayerCommandEvent : PlayerEvent, ICancellable
+    public abstract class ServerCommandEvent : Event, ICancellable
     {
-        public PlayerCommandEvent(Player player, API.Server server) : base(player, server)
+        public ServerCommandEvent(string command, API.Server server) : base(server)
         {
+
         }
 
         /// <summary>
-        /// The command the player has issued, without the prefix.
+        /// The command issued, without the prefix.
         /// </summary>
         public string Command { get; set; }
 

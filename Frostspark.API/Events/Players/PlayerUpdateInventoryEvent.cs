@@ -13,7 +13,7 @@ namespace Frostspark.API.Events.Players
     /// </summary>
     public class PlayerUpdateInventoryEvent : PlayerEvent
     {
-        public PlayerUpdateInventoryEvent(API.Entities.Player player, API.Server server) : base(player, server)
+        public PlayerUpdateInventoryEvent(Player player, API.Server server) : base(player, server)
         {
         }
 

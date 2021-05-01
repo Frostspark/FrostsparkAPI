@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Frostspark.API.Entities;
+using Frostspark.API.Events.Interfaces;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.Items
 {
-    public abstract class ItemEvent : Event
+    public abstract class ItemEvent : Event, IHasTarget<DroppedItem>
     {
-        protected ItemEvent(API.Entities.DroppedItem item, API.Server server) : base(server)
+        protected ItemEvent(DroppedItem item, API.Server server) : base(server)
         {
             Item = item;
         }
 
-        public API.Entities.DroppedItem Item { get; }
+        public DroppedItem Item { get; }
+
+        DroppedItem IHasTarget<DroppedItem>.Target => Item;
     }
 }

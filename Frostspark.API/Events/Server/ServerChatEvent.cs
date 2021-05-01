@@ -6,12 +6,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Frostspark.API.Events.Players
+namespace Frostspark.API.Events.Server
 {
-    public class PlayerChatEvent : PlayerEvent, ICancellable
+    public class ServerChatEvent : Event, ICancellable, IHasSource<Player>
     {
-        public PlayerChatEvent(Player player, API.Server server) : base(player, server)
+        public ServerChatEvent(Player player, string message, string format, Color color, List<Player> audience, API.Server server) : base(server)
         {
+            Message = message;
+            Format = format;
+            Color = color;
+            Recipients = audience;
         }
 
         /// <summary>
@@ -30,10 +34,14 @@ namespace Frostspark.API.Events.Players
         public Color Color { get; set; }
 
         /// <summary>
-        /// A list of players that will receive this message.
+        /// The list of players that will receive this message.
         /// </summary>
         public IList<Player> Recipients { get; set; }
 
         public bool Cancelled { get; set; }
+
+        public Player Player { get; }
+
+        Player IHasSource<Player>.Source => Player;
     }
 }

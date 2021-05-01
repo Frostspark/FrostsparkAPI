@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Frostspark.API.Events.Interfaces
 {
     /// <summary>
-    /// Shared common ancestor for interfaces and classes that can be targets for Frostspark's Event Handlers.
+    /// Marks an interface or class as a valid hook target, used for generic type constraints in <see cref="EventManager"/>
     /// </summary>
     public interface IEventHandlerCompatible
     {

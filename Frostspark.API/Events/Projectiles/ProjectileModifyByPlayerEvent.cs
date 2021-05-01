@@ -1,5 +1,6 @@
 ﻿using Frostspark.API.Entities;
 using Frostspark.API.Events.Interfaces;
+using Frostspark.API.Events.Players;
 using Frostspark.API.Structures;
 
 using System;
@@ -8,20 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Events.Players
+namespace Frostspark.API.Events.Projectiles
 {
-    public class PlayerModifyProjectileEvent : PlayerEvent, ICancellable, IClientsided
+    public class ProjectileModifyByPlayerEvent : ProjectileEvent, ICancellable, IClientsided, IHasSource<Player>
     {
-        public PlayerModifyProjectileEvent(Player player, API.Server server, Projectile projectile, ProjectileData new_data) : base(player, server)
+        public ProjectileModifyByPlayerEvent(Player player, Projectile projectile, ProjectileData new_data, API.Server server) : base(projectile, server)
         {
-            Projectile = projectile;
+            Player = player;
             NewData = new_data;
         }
 
-        /// <summary>
-        /// The projectile the player is updating.
-        /// </summary>
-        public Projectile Projectile { get; }
+        public Player Player { get; }
 
         /// <summary>
         /// The new projectile state.
@@ -31,5 +29,7 @@ namespace Frostspark.API.Events.Players
         public bool Cancelled { get; set; }
 
         public bool Modified { get; set; }
+
+        Player IHasSource<Player>.Source => Player;
     }
 }

@@ -10,7 +10,7 @@ using Frostspark.API.Utilities;
 
 namespace Frostspark.API.Events.Players
 {
-    public class PlayerTeleportEvent : PlayerEvent, ICancellable
+    public class PlayerTeleportEvent : PlayerEvent, ICancellable, IClientsided
     {
         public PlayerTeleportEvent(Player player, API.Server server) : base(player, server)
         {
@@ -32,6 +32,8 @@ namespace Frostspark.API.Events.Players
         /// The method used by this player to teleport.
         /// </summary>
         public PlayerTeleportationMethod Method { get; }
+
+        public bool Modified { get; set; }
 
         public enum PlayerTeleportationMethod
         {

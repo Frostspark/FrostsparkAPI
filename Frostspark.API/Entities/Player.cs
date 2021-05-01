@@ -35,7 +35,7 @@ namespace Frostspark.API.Entities
         /// </summary>
         /// <param name="message">The string message to send</param>
         /// <param name="color">The base color of the message</param>
-        public abstract void SendMessage(string message, Utilities.Color color);
+        public abstract void SendMessage(string message, Color color);
 
         public abstract void SendSuccessMessage(string s);
 

@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Events.Players.Damage
+namespace Frostspark.API.Events.NPCs
 {
-    public abstract class PlayerDamageEvent : PlayerEvent, ICancellable, IDamageEvent
+    public abstract class NPCDamageEvent : NPCEvent, IDamageEvent, ICancellable
     {
-        public PlayerDamageEvent(Player player, API.Server server, int damage, float knockback, HorizontalDirection direction, bool crit) : base(player, server)
+        protected NPCDamageEvent(NPC npc, int damage, float knockback, HorizontalDirection direction, bool crit, API.Server server) : base(npc, server)
         {
             Damage = damage;
             Knockback = knockback;

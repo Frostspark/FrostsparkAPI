@@ -1,4 +1,5 @@
-﻿using Frostspark.API.Events.Interfaces;
+﻿using Frostspark.API.Entities;
+using Frostspark.API.Events.Interfaces;
 
 using System;
 using System.Collections.Generic;
@@ -8,17 +9,19 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.Chest
 {
-    public class ChestRenameEvent : ChestEvent, ICancellable
+    public class ChestRenameEvent : ChestEvent, ICancellable, IHasSource<Player>
     {
-        public ChestRenameEvent(API.Entities.Player player, API.Entities.Chest chest, API.Server server) : base(chest, server)
+        public ChestRenameEvent(Player player, API.Entities.Chest chest, API.Server server) : base(chest, server)
         {
             Player = player;
         }
 
-        public API.Entities.Player Player { get; }
+        public Player Player { get; }
 
         public string NewName { get; set; }
 
         public bool Cancelled { get; set; }
+
+        Player IHasSource<Player>.Source => Player;
     }
 }

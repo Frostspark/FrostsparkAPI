@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.Interfaces
 {
-    public interface IHasTarget<T>
+    /// <summary>
+    /// Signifies the event has a target <typeparamref name="TargetType"/> entity that is impacted by this event.
+    /// </summary>
+    /// <typeparam name="TargetType"></typeparam>
+    public interface IHasTarget<TargetType> : IEventHandlerCompatible
     {
-        T Target { get; }
+        /// <summary>
+        /// The entity this event modifies, targets or otherwise concerns.
+        /// </summary>
+        TargetType Target { get; }
     }
 }

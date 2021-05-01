@@ -8,20 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Events.Players
+namespace Frostspark.API.Events.World
 {
-    public class PlayerHitBlockEvent : PlayerEvent, ICancellable
+    public class TileDamageEvent : TileEvent, ICancellable, IHasSource<Player>
     {
-        public PlayerHitBlockEvent(Player player, Tile tile, byte damage, API.Server server) : base(player, server)
+        public TileDamageEvent(Player player, byte damage, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
-            Tile = tile;
+            Player = player;
             Damage = damage;
         }
 
-        /// <summary>
-        /// The tile being damaged.
-        /// </summary>
-        public Tile Tile { get; }
+        public Player Player { get; }
 
         /// <summary>
         /// The hitpoints the tile will be damaged for.
@@ -29,5 +26,7 @@ namespace Frostspark.API.Events.Players
         public byte Damage { get; }
 
         public bool Cancelled { get; set; }
+
+        Player IHasSource<Player>.Source => Player;
     }
 }
