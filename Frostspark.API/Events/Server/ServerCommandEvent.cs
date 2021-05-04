@@ -6,7 +6,7 @@ namespace Frostspark.API.Events.Server
     {
         public ServerCommandEvent(string command, API.Server server) : base(server)
         {
-
+            Command = command;
         }
 
         /// <summary>
