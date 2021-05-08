@@ -1,6 +1,7 @@
 ﻿using Frostspark.API.Utilities;
 
 using System;
+using System.Threading.Tasks;
 
 namespace Frostspark.API
 {
@@ -35,15 +36,15 @@ namespace Frostspark.API
                 Assert.State(() => Instance == null, "The server API has already been initialized!");
         }
 
-        public static void Initialize(Server server)
+        public static async Task Initialize(Server server)
         {
-            if(Initialized)
+            if (Initialized)
             {
                 throw new InvalidOperationException("The API is already initialised.");
             }
 
             Server = server;
-            Server.Initialize();
+            await Server.Initialize();
 
             Initialized = true;
         }

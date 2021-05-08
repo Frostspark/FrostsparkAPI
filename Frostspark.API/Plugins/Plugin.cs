@@ -1,5 +1,7 @@
 ﻿using Frostspark.API.Logging;
 
+using System.Threading.Tasks;
+
 namespace Frostspark.API.Plugins
 {
     public abstract class Plugin
@@ -18,6 +20,19 @@ namespace Frostspark.API.Plugins
         /// The plugin's load order.
         /// </summary>
         public virtual int LoadOrder => 0;
+
+        /// <summary>
+        /// The plugins this plugin depends on.
+        /// <para>This is used to determine load order within each <see cref="LoadOrder"/> tier.</para>
+        /// </summary>
+        public virtual string[] Dependencies => new string[0];
+
+        /// <summary>
+        /// The plugins that depend on this one.
+        /// <para>This is used to determine load order within each <see cref="LoadOrder"/> tier.</para>
+        /// This field is dedicated for plugins providing "enable-time services" to specific plugins dynamically.
+        /// </summary>
+        public virtual string[] Dependents => new string[0];
 
         /// <summary>
         /// Whether or not this plugin is enabled.
@@ -43,23 +58,23 @@ namespace Frostspark.API.Plugins
         /// <summary>
         /// Called when this plugin is enabled.
         /// </summary>
-        public abstract void Enable();
+        public abstract Task Enable();
 
         /// <summary>
         /// Called when this plugin is disabled.
         /// </summary>
-        public abstract void Disable();
+        public abstract Task Disable();
 
         /// <summary>
         /// Called when this plugin has been loaded.
         /// </summary>
-        public abstract void Load();
+        public abstract Task Load();
 
         /// <summary>
         /// Called when this plugin is about to be unloaded.
         /// <para>You should take extreme care to end all activities not managed by Frostspark as to not block the unloading process as soon as this is called.</para>
         /// It is okay to block here for a couple of additional milliseconds, as Frostspark will request the GC to clean up your plugin causing a short stop anyway.
         /// </summary>
-        public abstract void Unload();
+        public abstract Task Unload();
     }
 }

@@ -1,40 +1,41 @@
 ﻿using Frostspark.API.Logging;
 
 using System;
+using System.Threading.Tasks;
 
 namespace Frostspark.API.Plugins
 {
     public abstract class PluginManager
     {
-        public abstract PluginLoadResult LoadPlugin(string name);
+        public abstract Task<PluginLoadResult> LoadPlugin(string name);
 
         public abstract Plugin GetPlugin(string name);
 
         public abstract bool IsLoaded(string name);
 
-        public abstract PluginUnloadResult UnloadPlugin(string name);
+        public abstract Task<PluginUnloadResult> UnloadPlugin(string name);
 
-        protected static void SetEnabled(Plugin plugin)
+        protected static async Task SetEnabled(Plugin plugin)
         {
-            plugin.Enable();
+            await plugin.Enable().ConfigureAwait(false);
             plugin.Enabled = true;
         }
 
-        protected static void SetDisabled(Plugin plugin)
+        protected static async Task SetDisabled(Plugin plugin)
         {
-            plugin.Disable();
+            await plugin.Disable().ConfigureAwait(false);
             plugin.Enabled = false;
         }
 
-        protected static void SetLoaded(Plugin plugin)
+        protected static async Task SetLoaded(Plugin plugin)
         {
-            plugin.Load();
+            await plugin.Load().ConfigureAwait(false);
             plugin.Loaded = true;
         }
 
-        protected static void SetUnloaded(Plugin plugin)
+        protected static async Task SetUnloaded(Plugin plugin)
         {
-            plugin.Unload();
+            await plugin.Unload().ConfigureAwait(false);
             plugin.Loaded = false;
         }
 

@@ -7,6 +7,8 @@ using Frostspark.API.Plugins;
 using Frostspark.API.Scheduling;
 using Frostspark.API.Utilities;
 
+using System.Threading.Tasks;
+
 namespace Frostspark.API
 {
     /// <summary>
@@ -36,6 +38,6 @@ namespace Frostspark.API
 
         Scheduler Scheduler { get; }
 
-        void Initialize();
+        Task Initialize();
     }
 }
