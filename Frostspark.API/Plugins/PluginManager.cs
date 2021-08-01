@@ -57,7 +57,8 @@ namespace Frostspark.API.Plugins
         InvalidBinary = 2,
         AlreadyLoaded = 4,
         Exception = 8,
-        NotFound = 16
+        NotFound = 16,
+        Incompatible = 32
     }
 
     [Flags]
