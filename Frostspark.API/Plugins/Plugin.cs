@@ -1,5 +1,6 @@
 ﻿using Frostspark.API.Logging;
 
+using System;
 using System.Threading.Tasks;
 
 namespace Frostspark.API.Plugins
@@ -33,6 +34,12 @@ namespace Frostspark.API.Plugins
         /// This field is dedicated for plugins providing "enable-time services" to specific plugins dynamically.
         /// </summary>
         public virtual string[] Dependents => new string[0];
+
+        /// <summary>
+        /// The plugin's compatibility info.
+        /// <para>Defines what game version & engine type this plugin can run on amongst others.</para>
+        /// </summary>
+        public virtual PluginCompatibilityInfo CompatibilityInfo => null;
 
         /// <summary>
         /// Whether or not this plugin is enabled.

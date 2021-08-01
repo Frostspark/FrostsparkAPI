@@ -10,6 +10,7 @@ namespace Frostspark.API.Events.Server
     {
         public ServerChatEvent(Player player, string message, string format, Color color, List<Player> audience, API.Server server) : base(server)
         {
+            Player = player;
             Message = message;
             Format = format;
             Color = color;
