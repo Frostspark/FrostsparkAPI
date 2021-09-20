@@ -15,5 +15,10 @@
         /// This projectile's client-given identity number.
         /// </summary>
         public abstract int Identity { get; }
+
+        /// <summary>
+        /// Kills this projectile.
+        /// </summary>
+        public abstract void Kill();
     }
 }
