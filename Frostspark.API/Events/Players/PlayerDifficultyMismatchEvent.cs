@@ -12,9 +12,10 @@ namespace Frostspark.API.Events.Players
     {
         public PlayerDifficultyMismatchEvent(Player player, API.Server server) : base(player, server)
         {
+
         }
 
-        public DifficultyResult Result { get; set; }
+        public DifficultyResult Result { get; set; } = DifficultyResult.Kick;
 
         public enum DifficultyResult
         {

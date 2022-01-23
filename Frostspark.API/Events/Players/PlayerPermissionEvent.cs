@@ -17,7 +17,7 @@ namespace Frostspark.API.Events.Players
         /// <summary>
         /// The result of the permission check.
         /// </summary>
-        public PermissionResult Result { get; set; }
+        public PermissionResult Result { get; set; } = PermissionResult.None;
 
         public enum PermissionResult
         {
