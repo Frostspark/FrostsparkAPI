@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.Players
 {
-    internal class PlayerDifficultyMismatchEvent : PlayerEvent
+    public class PlayerDifficultyMismatchEvent : PlayerEvent
     {
         public PlayerDifficultyMismatchEvent(Player player, API.Server server) : base(player, server)
         {
