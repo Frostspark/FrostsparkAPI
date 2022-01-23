@@ -16,7 +16,7 @@ namespace Frostspark.API.Events.Players
         {
         }
 
-        public Vector2D<float> Position { get; set; }
+        public Vector2D<int> Position { get; set; }
 
         public bool Cancelled { get; set; }
     }
