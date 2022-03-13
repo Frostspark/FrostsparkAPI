@@ -1,6 +1,5 @@
 ﻿using Frostspark.API.Logging;
 
-using System;
 using System.Threading.Tasks;
 
 namespace Frostspark.API.Plugins
