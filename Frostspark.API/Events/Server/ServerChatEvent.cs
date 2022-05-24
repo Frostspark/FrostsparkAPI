@@ -28,6 +28,11 @@ namespace Frostspark.API.Events.Server
         public string Format { get; set; }
 
         /// <summary>
+        /// Whether or not the <see cref="Format"/> field contains a format string, or the entire ready-to-send chat message.
+        /// </summary>
+        public bool IsPreformatted { get; set; }
+
+        /// <summary>
         /// The base color of the chat message
         /// </summary>
         public Color Color { get; set; }
