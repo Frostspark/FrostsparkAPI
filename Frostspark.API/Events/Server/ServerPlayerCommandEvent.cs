@@ -9,7 +9,7 @@ namespace Frostspark.API.Events.Server
         {
             Player = player;
         }
-        
+
         public Player Player { get; }
 
         Player IHasSource<Player>.Source => Player;

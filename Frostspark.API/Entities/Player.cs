@@ -1,9 +1,9 @@
-﻿using System;
-using System.Net;
-
-using Frostspark.API.Entities.Interfaces;
+﻿using Frostspark.API.Entities.Interfaces;
 using Frostspark.API.Structures;
 using Frostspark.API.Utilities;
+
+using System;
+using System.Net;
 
 namespace Frostspark.API.Entities
 {

@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Frostspark.API.Entities;
+
+using System;
 using System.Collections.Generic;
-using Frostspark.API.Entities;
 
 namespace Frostspark.API.Collections
 {

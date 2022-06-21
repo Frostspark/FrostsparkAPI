@@ -10,7 +10,7 @@
         /// The item's type.
         /// </summary>
         public abstract int Type { get; set; }
-        
+
         /// <summary>
         /// The item stack's quantity.
         /// </summary>

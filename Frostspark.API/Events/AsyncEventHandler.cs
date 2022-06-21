@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Frostspark.API.Events
 {
     public abstract class AsyncEventHandler<T> : AsyncEventHandler where T : IEventHandlerCompatible
-    { 
+    {
 
         public sealed override ValueTask HandleEvent(IEventHandlerCompatible e)
         {
