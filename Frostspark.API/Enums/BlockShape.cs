@@ -10,9 +10,9 @@ namespace Frostspark.API.Enums
     {
         Full,
         HalfBrick,
-        BottomRight,
         BottomLeft,
-        TopRight,
-        TopLeft
+        BottomRight,
+        TopLeft,
+        TopRight
     }
 }
