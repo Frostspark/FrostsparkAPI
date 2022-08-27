@@ -17,6 +17,19 @@ namespace Frostspark.API.Utilities
         }
 
         /// <summary>
+        /// Determines if a zero-based page index is valid for a given collection.
+        /// </summary>
+        /// <param name="entries"></param>
+        /// <param name="page"></param>
+        /// <param name="entries_per_page"></param>
+        /// <returns></returns>
+        public static bool IsPageValid(int entries, int page, int entries_per_page)
+        {
+            int max = DeterminePageCount(entries, entries_per_page);
+            return page >= 0 && page < max;
+        }
+
+        /// <summary>
         /// Returns a slice of the <paramref name="collection"/> paginated with a zero-based page index &amp; amount of entries per page.
         /// </summary>
         /// <typeparam name="T"></typeparam>

@@ -4,9 +4,9 @@ using Frostspark.API.Worlds;
 
 namespace Frostspark.API.Events.World
 {
-    public class TileDamageEvent : TileEvent, IHasSource<Player>, ICancellable
+    public class BlockDamageEvent : SingleTileEvent, IHasSource<Player>, ICancellable
     {
-        public TileDamageEvent(Player player, byte damage, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public BlockDamageEvent(Player player, byte damage, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
             Player = player;
             Damage = damage;

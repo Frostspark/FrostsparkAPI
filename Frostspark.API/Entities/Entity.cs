@@ -48,7 +48,7 @@ namespace Frostspark.API.Entities
 
         /// <summary>
         /// Whether or not this entity is still in the game world.
-        /// <para>This is not synonymous with the native index being active, but rather with one specific instance of it occupying this index.</para>
+        /// <para>This is not synonymous with the native index being active, but rather with one specific instance occupying that index.</para>
         /// This means that once this entity is removed, and its index reassigned, this will still return false.
         /// </summary>
         public abstract bool Active { get; }
