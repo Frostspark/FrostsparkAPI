@@ -10,15 +10,12 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class LogicGatePokeEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public abstract class LogicGatePokeEvent : SingleTileEvent, ICancellable
     {
-        public LogicGatePokeEvent(Player source, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public LogicGatePokeEvent(Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
-            Source = source;
         }
 
         public bool Cancelled { get; set; }
-
-        public Player Source { get; }
     }
 }

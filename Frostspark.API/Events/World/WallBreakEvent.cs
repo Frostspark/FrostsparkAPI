@@ -10,14 +10,11 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class WallBreakEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public abstract class WallBreakEvent : SingleTileEvent, ICancellable
     {
-        public WallBreakEvent(Player source, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public WallBreakEvent(Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
-            Source = source;
         }
-
-        public Player Source { get; }
 
         public bool Cancelled { get; set; }
     }

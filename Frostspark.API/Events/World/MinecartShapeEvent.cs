@@ -10,15 +10,12 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class MinecartShapeEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public abstract class MinecartShapeEvent : SingleTileEvent, ICancellable
     {
-        public MinecartShapeEvent(Player source, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public MinecartShapeEvent(Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
-            Source = source;
         }
 
         public bool Cancelled { get; set; }
-
-        public Player Source { get; }
     }
 }

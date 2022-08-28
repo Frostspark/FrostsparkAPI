@@ -11,16 +11,13 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class MultiblockPlaceEvent : MultiblockTileEvent, IHasSource<Player>, ICancellable
+    public abstract class MultiblockPlaceEvent : MultiblockTileEvent, ICancellable
     {
-        public MultiblockPlaceEvent(int type, byte style, Player player, Rectangle area, Tile[,] tiles, Worlds.World world, API.Server server) : base(area, tiles, world, server)
+        public MultiblockPlaceEvent(int type, byte style, Rectangle area, Tile[,] tiles, Worlds.World world, API.Server server) : base(area, tiles, world, server)
         {
             Type = type;
             Style = style;
-            Source = player;
         }
-
-        public Player Source { get; }
 
         public bool Cancelled { get; set; }
 

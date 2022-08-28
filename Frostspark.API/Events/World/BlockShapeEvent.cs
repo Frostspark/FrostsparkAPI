@@ -11,17 +11,14 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class BlockShapeEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public abstract class BlockShapeEvent : SingleTileEvent, ICancellable
     {
-        public BlockShapeEvent(BlockShape shape, Player player, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public BlockShapeEvent(BlockShape shape, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
             Shape = shape;
-            Source = player;
         }
 
         public bool Cancelled { get; set; }
-
-        public Player Source { get; }
 
         public BlockShape Shape { get; set; }
     }

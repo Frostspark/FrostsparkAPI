@@ -8,17 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frostspark.API.Events.World
+namespace Frostspark.API.Events.World.Players
 {
-    public sealed class BlockPoundEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public sealed class PlayerActuatorPlaceEvent : ActuatorPlaceEvent, IHasSource<Player>
     {
-        public BlockPoundEvent(Player player, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public PlayerActuatorPlaceEvent(Player player, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
             Source = player;
         }
 
         public Player Source { get; }
-
-        public bool Cancelled { get; set; }
     }
 }

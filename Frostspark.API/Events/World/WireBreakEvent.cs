@@ -11,14 +11,11 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class WireBreakEvent : WireEvent, IHasSource<Player>, ICancellable
+    public abstract class WireBreakEvent : WireEvent, ICancellable
     {
-        public WireBreakEvent(WireColor color, Player player, Tile tile, Worlds.World world, API.Server server) : base(color, tile, world, server)
+        public WireBreakEvent(WireColor color, Tile tile, Worlds.World world, API.Server server) : base(color, tile, world, server)
         {
-            Source = player;
         }
-
-        public Player Source { get; }
 
         public bool Cancelled { get; set; }
     }

@@ -10,18 +10,15 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class BlockReplaceEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public abstract class BlockReplaceEvent : SingleTileEvent, ICancellable
     {
-        public BlockReplaceEvent(int type, byte style, Player source, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public BlockReplaceEvent(int type, byte style, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
             Type = type;
             Style = style;
-            Source = source;
         }
 
         public bool Cancelled { get; set; }
-
-        public Player Source { get; }
 
         public int Type { get; set; }
 

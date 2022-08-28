@@ -10,16 +10,13 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class BlockToggleActuationEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public abstract class BlockToggleActuationEvent : SingleTileEvent, ICancellable
     {
-        public BlockToggleActuationEvent(Player source, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public BlockToggleActuationEvent(Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
-            Source = source;
         }
 
         public bool Cancelled { get; set; }
-
-        public Player Source { get; }
 
         public bool NewState { get; set; }
     }

@@ -10,14 +10,11 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class ActuatorPlaceEvent : SingleTileEvent, IHasSource<Player>, ICancellable
+    public abstract class ActuatorPlaceEvent : SingleTileEvent, ICancellable
     {
-        public ActuatorPlaceEvent(Player player, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public ActuatorPlaceEvent(Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
-            Source = player;
         }
-
-        public Player Source { get; }
 
         public bool Cancelled { get; set; }
     }

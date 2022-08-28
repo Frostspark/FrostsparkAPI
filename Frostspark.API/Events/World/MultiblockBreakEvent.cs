@@ -11,13 +11,12 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public sealed class MultiblockBreakEvent : MultiblockTileEvent, IHasSource<Player>, ICancellable
+    public abstract class MultiblockBreakEvent : MultiblockTileEvent, ICancellable
     {
-        public MultiblockBreakEvent(bool fail, bool drops, Player player, Rectangle area, Tile[,] tiles, Worlds.World world, API.Server server) : base(area, tiles, world, server)
+        public MultiblockBreakEvent(bool fail, bool drops, Rectangle area, Tile[,] tiles, Worlds.World world, API.Server server) : base(area, tiles, world, server)
         {
             Fail = fail;
             Drops = drops;
-            Source = player;
         }
 
         public bool Cancelled { get; set; }
@@ -25,7 +24,5 @@ namespace Frostspark.API.Events.World
         public bool Fail { get; set; }
 
         public bool Drops { get; set; }
-
-        public Player Source { get; }
     }
 }
