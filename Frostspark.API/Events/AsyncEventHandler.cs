@@ -7,7 +7,6 @@ namespace Frostspark.API.Events
 {
     public abstract class AsyncEventHandler<T> : AsyncEventHandler where T : IEventHandlerCompatible
     {
-
         public sealed override ValueTask HandleEvent(IEventHandlerCompatible e)
         {
             if (e is T t)
