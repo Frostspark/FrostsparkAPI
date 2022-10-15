@@ -28,7 +28,7 @@ namespace Frostspark.API.Worlds
         /// <summary>
         /// The tile's liquid type
         /// </summary>
-        public abstract TileLiquidType LiquidType { get; set; }
+        public abstract BlockLiquidType LiquidType { get; set; }
 
         /// <summary>
         /// The tile's foreground block texture frame
