@@ -3,9 +3,9 @@ using Frostspark.API.Events.Interfaces;
 
 namespace Frostspark.API.Events.Items
 {
-    public abstract class ItemEvent : Event, IHasTarget<DroppedItem>
+    public abstract class DroppedItemEvent : Event, IHasTarget<DroppedItem>
     {
-        protected ItemEvent(DroppedItem item, API.Server server) : base(server)
+        protected DroppedItemEvent(DroppedItem item, API.Server server) : base(server)
         {
             Item = item;
         }

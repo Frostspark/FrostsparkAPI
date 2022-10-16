@@ -10,12 +10,10 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.World
 {
-    public abstract class LiquidUpdateEvent : SingleTileEvent, ICancellable
+    public class LiquidPourEvent : SingleTileEvent, ICancellable
     {
-        protected LiquidUpdateEvent(BlockLiquidType type, byte level, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
+        public LiquidPourEvent(BlockLiquidType type, byte level, Tile tile, Worlds.World world, API.Server server) : base(tile, world, server)
         {
-            Type = type;
-            Level = level;
         }
 
         public BlockLiquidType Type { get; set; }
