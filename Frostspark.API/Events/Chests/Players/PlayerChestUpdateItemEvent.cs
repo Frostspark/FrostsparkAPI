@@ -1,11 +1,11 @@
 ﻿using Frostspark.API.Entities;
 using Frostspark.API.Events.Interfaces;
 
-namespace Frostspark.API.Events.Chests
+namespace Frostspark.API.Events.Chests.Players
 {
-    public class ChestUpdateItemEvent : ChestEvent, ICancellable, IHasSource<Player>
+    public class PlayerChestUpdateItemEvent : ChestEvent, ICancellable, IHasSource<Player>
     {
-        public ChestUpdateItemEvent(Player player, Chest chest, API.Server server) : base(chest, server)
+        public PlayerChestUpdateItemEvent(Player player, Chest chest, API.Server server) : base(chest, server)
         {
             Player = player;
         }

@@ -1,12 +1,13 @@
 ﻿using Frostspark.API.Entities;
 using Frostspark.API.Events.Interfaces;
 
-namespace Frostspark.API.Events.Chests
+namespace Frostspark.API.Events.Chests.Players
 {
-    public class ChestRenameEvent : ChestEvent, ICancellable, IHasSource<Player>
+    public class PlayerChestRenameEvent : ChestEvent, ICancellable, IHasSource<Player>
     {
-        public ChestRenameEvent(Player player, Chest chest, API.Server server) : base(chest, server)
+        public PlayerChestRenameEvent(string new_name, Player player, Chest chest, API.Server server) : base(chest, server)
         {
+            NewName = new_name;
             Player = player;
         }
 
