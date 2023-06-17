@@ -18,8 +18,19 @@ namespace Frostspark.API.Collections
         /// Gets an entity instance using a native entity index. Returns null for inactive entities.
         /// </summary>
         /// <param name="i">Native entity index</param>
-        /// <returns>A wrapped TileEntity object</returns>
+        /// <returns>A wrapped TileEntity object, or null if inactive</returns>
         public abstract TileEntity this[int i]
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Gets an entity instance using a coordinate pair. Returns null when not found.
+        /// </summary>
+        /// <param name="x">The X coordinate</param>
+        /// <param name="y">The Y coordinate</param>
+        /// <returns>The entity at this location, or null if not found</returns>
+        public abstract TileEntity this[int x, int y]
         {
             get;
         }
@@ -37,6 +48,5 @@ namespace Frostspark.API.Collections
         /// <param name="pred">The search query</param>
         /// <returns>A list of 0 or more <typeparamref name="T"/> entities matching the search terms</returns>
         public abstract List<TileEntity> Search(Predicate<TileEntity> pred);
-
     }
 }

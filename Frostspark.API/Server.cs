@@ -24,6 +24,8 @@ namespace Frostspark.API
 
         EntityList<DroppedItem> Items { get; }
 
+        TileEntityList TileEntities { get; }
+
         Worlds.World World { get; }
 
         PluginManager Plugins { get; }
