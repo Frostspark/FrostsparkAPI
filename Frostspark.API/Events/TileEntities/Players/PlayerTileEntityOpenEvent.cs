@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.TileEntities.Players
 {
-    public sealed class PlayerTileEntityOpenEvent : TileEntityEvent, IHasSource<Player>
+    public sealed class PlayerTileEntityOpenEvent : TileEntityEvent, IHasSource<Player>, ICancellable
     {
         public PlayerTileEntityOpenEvent(Player source, TileEntity target, API.Server server) : base(target, server)
         {
@@ -17,5 +17,7 @@ namespace Frostspark.API.Events.TileEntities.Players
         }
 
         public Player Source { get; }
+
+        public bool Cancelled { get; set; }
     }
 }
