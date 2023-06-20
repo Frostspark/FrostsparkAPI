@@ -9,7 +9,7 @@ namespace Frostspark.API.Events.Players
     /// </summary>
     public class PlayerMoveEvent : PlayerEvent, ICancellable
     {
-        public PlayerMoveEvent(Player player, API.Server server, Vector2D<float> from_position, Vector2D<float> to_position, bool is_implicit) : base(player, server)
+        public PlayerMoveEvent(Vector2D<float> from_position, Vector2D<float> to_position, Player player, API.Server server, bool is_implicit) : base(player, server)
         {
             Implicit = is_implicit;
             OldPosition = from_position;
