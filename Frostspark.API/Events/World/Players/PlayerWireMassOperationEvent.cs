@@ -3,11 +3,11 @@ using Frostspark.API.Enums;
 using Frostspark.API.Events.Interfaces;
 using Frostspark.API.Utilities;
 
-namespace Frostspark.API.Events.World
+namespace Frostspark.API.Events.World.Players
 {
-    public class WorldWireOperationEvent : WorldEvent, IHasSource<Player>, ICancellable
+    public class PlayerWireMassOperationEvent : WorldEvent, IHasSource<Player>, ICancellable
     {
-        public WorldWireOperationEvent(Vector2D<int> start, Vector2D<int> end, WireToolMode mode, Player player, API.Server server, Worlds.World world) : base(server, world)
+        public PlayerWireMassOperationEvent(Vector2D<int> start, Vector2D<int> end, WireToolMode mode, Player player, API.Server server, Worlds.World world) : base(server, world)
         {
             Start = start;
             End = end;
