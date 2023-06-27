@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Events.TileEntities.Players
 {
-    public sealed class PlayerTileEntityInteractEvent : TileEntityEvent, IHasSource<Player>
+    public sealed class PlayerTileEntityInteractEvent : TileEntityEvent, IHasSource<Player>, ICancellable
     {
-        public PlayerTileEntityInteractEvent(TileEntity target, API.Server server) : base(target, server)
+        public PlayerTileEntityInteractEvent(Player source, TileEntity target, API.Server server) : base(target, server)
         {
+            Source = source;
         }
 
         public Player Source { get; }
+
+        public bool Cancelled { get; set; }
     }
 }
