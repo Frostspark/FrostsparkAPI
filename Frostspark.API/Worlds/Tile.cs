@@ -1,4 +1,5 @@
 ﻿using Frostspark.API.Enums;
+using Frostspark.API.Structures;
 using Frostspark.API.Utilities;
 
 namespace Frostspark.API.Worlds

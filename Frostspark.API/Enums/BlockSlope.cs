@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Frostspark.API.Enums
 {
-    public enum BlockShape
+    public enum BlockSlope
     {
-        Full,
-        HalfBrick,
-        BottomLeft,
-        BottomRight,
-        TopLeft,
-        TopRight
+        None = 0,
+        BottomLeft = 1,
+        BottomRight = 2,
+        TopLeft = 3,
+        TopRight = 4
     }
 }
