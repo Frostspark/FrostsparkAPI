@@ -11,13 +11,16 @@ namespace Frostspark.API.Events.Players
 {
     public sealed class PlayerSpawnNPCEvent : PlayerEvent, IHasSource<Player>, ICancellable
     {
-        public PlayerSpawnNPCEvent(int type, Player player, API.Server server) : base(player, server)
+        public PlayerSpawnNPCEvent(int type, byte style, Player player, API.Server server) : base(player, server)
         {
-            NPCType = type;
+            Type = type;
+            Style = style;
             Source = player;
         }
 
-        public int NPCType { get; set; }
+        public int Type { get; set; }
+
+        public byte Style { get; set; }
 
         public bool Cancelled { get; set; }
 
