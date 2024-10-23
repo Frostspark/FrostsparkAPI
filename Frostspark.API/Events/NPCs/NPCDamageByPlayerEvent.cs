@@ -11,7 +11,7 @@ namespace Frostspark.API.Events.NPCs
             Attacker = attacker;
         }
 
-        Player Attacker { get; }
+        public Player Attacker { get; }
 
         Player IHasSource<Player>.Source => Attacker;
     }
