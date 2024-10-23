@@ -4,11 +4,11 @@ namespace Frostspark.API.Utilities
 {
     public class CLIParser
     {
-        private Dictionary<string, string> Params = new Dictionary<string, string>();
+        private Dictionary<string, List<string>> Params = new Dictionary<string, List<string>>();
 
         public void Load(string[] commandline)
         {
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            Dictionary<string, List<string>> parameters = new Dictionary<string, List<string>>();
 
             string current_key = null;
 
@@ -27,7 +27,8 @@ namespace Frostspark.API.Utilities
                 }
                 else if (current_key != null)
                 {
-                    parameters.Add(current_key, arg);
+                    parameters.TryAdd(current_key, new List<string>());
+                    parameters[current_key].Add(arg);
                     current_key = null;
                 }
             }
@@ -42,7 +43,20 @@ namespace Frostspark.API.Utilities
 
         public bool GetValue(string flag, out string value)
         {
-            return Params.TryGetValue(flag, out value);
+            value = null;
+
+            if (Params.TryGetValue(flag, out var values) && values.Count > 0)
+            {
+                value = values[0];
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool GetValues(string flag, out List<string> values)
+        {
+            return Params.TryGetValue(flag, out values);
         }
     }
 }

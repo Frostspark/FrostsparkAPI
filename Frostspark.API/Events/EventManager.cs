@@ -11,9 +11,9 @@ namespace Frostspark.API.Events
 
         public abstract void RegisterAsyncHandler<TEvent>(Plugin plugin, AsyncEventHandler<TEvent> handler) where TEvent : IEventHandlerCompatible;
 
-        public abstract void UnregisterHandler<TEvent>(Plugin plugin, SyncEventHandler<TEvent> handler) where TEvent : IEventHandlerCompatible;
+        public abstract void DeregisterHandler<TEvent>(Plugin plugin, SyncEventHandler<TEvent> handler) where TEvent : IEventHandlerCompatible;
 
-        public abstract void UnregisterAsyncHandler<TEvent>(Plugin plugin, AsyncEventHandler<TEvent> handler) where TEvent : IEventHandlerCompatible;
+        public abstract void DeregisterAsyncHandler<TEvent>(Plugin plugin, AsyncEventHandler<TEvent> handler) where TEvent : IEventHandlerCompatible;
 
         public abstract void FireEvent<TEvent>(TEvent obj) where TEvent : Event;
 

@@ -15,6 +15,8 @@ namespace Frostspark.API.Utilities
         public readonly byte G;
         public readonly byte B;
 
+        public uint PackedValue => (uint)(R | (G << 8) | (B << 16));
+
         public string Hex => $"{R:X2}{G:X2}{B:X2}";
 
         public override bool Equals(object obj)
