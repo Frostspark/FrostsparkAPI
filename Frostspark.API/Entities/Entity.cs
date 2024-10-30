@@ -64,8 +64,7 @@ namespace Frostspark.API.Entities
         /// <returns>Whether or not the value exists and was assigned to <paramref name="value"/></returns>
         public bool GetMetadata<T>(Plugin plugin, bool global, string key, out T value)
         {
-            if (plugin == null)
-                throw new ArgumentNullException("The plugin instance cannot be null!");
+            ArgumentNullException.ThrowIfNull(plugin);
 
             if (global)
             {
@@ -88,8 +87,7 @@ namespace Frostspark.API.Entities
         /// <param name="value">The value output. <see cref="default"/> if not found.</param>
         public void SetMetadata<T>(Plugin plugin, bool global, string key, T value)
         {
-            if (plugin == null)
-                throw new ArgumentNullException("The plugin instance cannot be null!");
+            ArgumentNullException.ThrowIfNull(plugin);
 
             if (global)
             {
@@ -111,8 +109,7 @@ namespace Frostspark.API.Entities
         /// <returns>Whether or not a value was removed.</returns>
         public bool ClearMetadata<T>(Plugin plugin, bool global, string key)
         {
-            if (plugin == null)
-                throw new ArgumentNullException("The plugin instance cannot be null!");
+            ArgumentNullException.ThrowIfNull(plugin);
 
             if (global)
             {

@@ -10,11 +10,11 @@ namespace Frostspark.API.Events.NPCs
 {
     public sealed class NPCTransformedEvent : NPCEvent
     {
-        public NPCTransformedEvent(int old_type, NPC npc, API.Server server) : base(npc, server)
+        public NPCTransformedEvent(int new_type, NPC npc, API.Server server) : base(npc, server)
         {
-            OldType = old_type;
+            NewType = new_type;
         }
 
-        public int OldType { get; set; }
+        public int NewType { get; set; }
     }
 }
