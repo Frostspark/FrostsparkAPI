@@ -15,6 +15,7 @@
         TeleportationPylon = 10,
         HookOfDissonance = 11,
         ShellPhoneSpawn = 12,
-        ShimmerUnstuck = 13
+        ShimmerUnstuck = 13,
+        Silent = 127
     }
 }
