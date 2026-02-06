@@ -16,6 +16,8 @@ namespace Frostspark.API.Enums
         PumpkinMoon,
         FrostMoon,
         BloodMoon,
-        SolarEclipse
+        SolarEclipse,
+        SlimeRain,
+        Party
     }
 }
