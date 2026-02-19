@@ -35,5 +35,10 @@ namespace Frostspark.API.Collections
         /// <returns>A list of 0 or more <typeparamref name="T"/> entities matching the search terms</returns>
         public abstract List<T> Search(Predicate<T> pred);
 
+        /// <summary>
+        /// Returns the number of active <typeparamref name="T"/> entities in the game world.
+        /// </summary>
+        public abstract int Count { get; }
+
     }
 }
